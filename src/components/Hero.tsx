@@ -9,7 +9,7 @@ export function Hero() {
   };
 
   return (
-  <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+
   <div className="max-w-4xl mx-auto text-center">
     <div className="mb-8">
       <div className="flex justify-center mb-8">
@@ -36,7 +36,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="flex justify-center gap-6">
+      <div className="flex justify-center gap-6">
           <a
             href="https://github.com/donjadao/donjadao"
             target="_blank"
