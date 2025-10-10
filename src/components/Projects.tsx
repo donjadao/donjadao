@@ -5,6 +5,8 @@ import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import matchaThumb from './assets/matcha-infographic.png';
+<img src={matchaThumb} alt="Matcha Vitality Chart" />
+
 
 
 const projects = [
@@ -12,7 +14,7 @@ const projects = [
     id: 1,
     title: 'Matcha Votality Chart',
     description: 'Created an interactive data visualization highlighting sustainability and economic issues in the matcha industry.',
-    image: matchaThumb,
+    image: 'matchaThumb',
     tags: ['Information Visualization', 'Data Analysis'],
     category: 'web',
     link: 'https://www.behance.net/gallery/236304399/Matcha-Votality-Chart',
