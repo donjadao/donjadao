@@ -8,9 +8,9 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform Redesign',
+    title: 'Matcha Votality Chart',
     description: 'Complete UI/UX overhaul of a shopping platform focused on improving conversion rates and user experience.',
-    image: 'https://images.unsplash.com/photo-1629494893504-d41e26a02631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVSSUyMFVYJTIwZGVzaWduJTIwbW9ja3VwfGVufDF8fHx8MTc2MDA3MTcyOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '<iframe src="https://www.behance.net/embed/project/236304399?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>',
     tags: ['UI Design', 'UX Research', 'Prototyping'],
     category: 'web',
     link: '#',
