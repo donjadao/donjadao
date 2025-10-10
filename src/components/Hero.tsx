@@ -23,7 +23,7 @@ export function Hero() {
             and creating compelling visual stories through design and art.
           </p>
          <p className="max-w-2xl mx-auto text-white/70 font-bold">
-            B.S. Information Science & Technology, May 2026
+            <strong>B.S. Information Science & Technology, May 2026</strong>
           </p>
         </div>
 
