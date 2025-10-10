@@ -1,0 +1,172 @@
+import { ExternalLink, Github } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+
+const projects = [
+  {
+    id: 1,
+    title: 'E-Commerce Platform Redesign',
+    description: 'Complete UI/UX overhaul of a shopping platform focused on improving conversion rates and user experience.',
+    image: 'https://images.unsplash.com/photo-1629494893504-d41e26a02631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVSSUyMFVYJTIwZGVzaWduJTIwbW9ja3VwfGVufDF8fHx8MTc2MDA3MTcyOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['UI Design', 'UX Research', 'Prototyping'],
+    category: 'web',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 2,
+    title: 'Fitness Tracking Mobile App',
+    description: 'Intuitive mobile app design for tracking workouts and nutrition with gamification elements.',
+    image: 'https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwMDAxNDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['Mobile UI', 'User Flow', 'Interaction Design'],
+    category: 'mobile',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 3,
+    title: 'SaaS Dashboard Design',
+    description: 'Clean and data-driven dashboard for a B2B analytics platform with complex data visualization.',
+    image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['Dashboard', 'Data Viz', 'Web App'],
+    category: 'web',
+    link: '#',
+    github: '#',
+  },
+  {
+    id: 4,
+    title: 'Banking App Concept',
+    description: 'Modern banking experience with focus on accessibility and security features.',
+    image: 'https://images.unsplash.com/photo-1629494893504-d41e26a02631?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxVSSUyMFVYJTIwZGVzaWduJTIwbW9ja3VwfGVufDF8fHx8MTc2MDA3MTcyOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['Mobile UI', 'FinTech', 'User Research'],
+    category: 'mobile',
+    link: '#',
+  },
+  {
+    id: 5,
+    title: 'Design System',
+    description: 'Comprehensive design system with components, patterns, and guidelines for a tech startup.',
+    image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['Design System', 'Components', 'Documentation'],
+    category: 'other',
+    link: '#',
+  },
+  {
+    id: 6,
+    title: 'Travel Booking Website',
+    description: 'Seamless booking experience with beautiful imagery and simplified checkout process.',
+    image: 'https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwMDAxNDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    tags: ['Web Design', 'E-Commerce', 'Responsive'],
+    category: 'web',
+    link: '#',
+  },
+];
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="mb-4 text-white">Featured Projects</h2>
+          <p className="max-w-2xl mx-auto text-white/70">
+            A collection of UI/UX design projects showcasing my approach to solving complex user problems 
+            with clean, intuitive interfaces.
+          </p>
+        </div>
+
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-4 mb-12">
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="web">Web</TabsTrigger>
+            <TabsTrigger value="mobile">Mobile</TabsTrigger>
+            <TabsTrigger value="other">Other</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="all">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="web">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects
+                .filter((p) => p.category === 'web')
+                .map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="mobile">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects
+                .filter((p) => p.category === 'mobile')
+                .map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="other">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects
+                .filter((p) => p.category === 'other')
+                .map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
+}
+
+function ProjectCard({ project }: { project: typeof projects[0] }) {
+  return (
+    <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+      <div className="relative overflow-hidden aspect-video">
+        <ImageWithFallback
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <CardHeader>
+        <CardTitle>{project.title}</CardTitle>
+        <CardDescription>{project.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <Badge key={tag} variant="secondary">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+      <CardFooter className="gap-2">
+        <Button variant="outline" size="sm" asChild>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="mr-2 h-4 w-4" />
+            View
+          </a>
+        </Button>
+        {project.github && (
+          <Button variant="outline" size="sm" asChild>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-4 w-4" />
+              Code
+            </a>
+          </Button>
+        )}
+      </CardFooter>
+    </Card>
+  );
+}
