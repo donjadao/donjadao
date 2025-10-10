@@ -34,10 +34,10 @@ export function Contact() {
             </CardHeader>
             <CardContent>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:ding.don908@gmail.com"
                 className="text-primary hover:underline"
               >
-                your.email@example.com
+                ding.don908@gmail.com
               </a>
             </CardContent>
           </Card>
@@ -51,8 +51,8 @@ export function Contact() {
               <CardDescription>Call me during business hours</CardDescription>
             </CardHeader>
             <CardContent>
-              <a href="tel:+1234567890" className="text-primary hover:underline">
-                +1 (234) 567-890
+              <a href="tel:+15059333337" className="text-primary hover:underline">
+                +1 (505) 933-3337
               </a>
             </CardContent>
           </Card>
@@ -66,7 +66,7 @@ export function Contact() {
               <CardDescription>Based in</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-white">San Francisco, CA</p>
+              <p className="text-white">Norman, OK</p>
             </CardContent>
           </Card>
         </div>
