@@ -32,14 +32,14 @@ const artworks = [
     title: 'Cheeeezzee',
     category: 'Glass Painting',
     image: glasscheese,
-    tall: false,
+    tall: true,
   },
   {
     id: 3,
     title: 'SASE T-Shirt',
     category: 'Graphic Design',
     image: saseshirt,
-    tall: true,
+    tall: false,
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const artworks = [
     title: 'City Streets',
     category: 'Illustration',
     image: markerpainting,
-    tall: false,
+    tall: true,
   },
   {
     id: 6,
@@ -88,7 +88,7 @@ const artworks = [
     title: 'Join UI/UX Poster',
     category: 'Graphic Design',
     image: UXRecruiting,
-    tall: true,
+    tall: false,
   },
   {
     id: 11,
