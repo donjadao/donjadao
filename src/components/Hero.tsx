@@ -20,10 +20,7 @@ export function Hero() {
       </h1>
       <p className="max-w-2xl mx-auto text-white/70 mb-2">
         A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
-        and creating compelling visual stories through design and art. 
-      </p>
-      <p className="text-white/70 font-bold mb-1">B.S. in Information Science and Technology</p>
-      <p className="text-white/70 font-bold">May 2026</p>
+        and creating compelling visual stories through design and art. B.S. in Information Science and Technology. May 2026.
     </div>
   </div>
 
