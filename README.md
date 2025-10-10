@@ -1,11 +1,21 @@
 
-  # UI/UX Online Portfolio
+# UI/UX Online Portfolio
 
-  This is a code bundle for UI/UX Online Portfolio. The original project is available at https://www.figma.com/design/KPBkeBvdsnxEFOlnr2ecpy/UI-UX-Online-Portfolio.
+This is a personal portfolio showcasing my work in UI/UX design, front-end development, and creative projects. Built with React and TypeScript, it features interactive layouts, accessible components, and a curated gallery of design assets.
 
-  ## Running the code
+## Features
 
-  Run `npm i` to install the dependencies.
+- Responsive design
+- Image gallery with dynamic imports
+- Navigation between portfolio sections
+- Custom favicon and styling
 
-  Run `npm run dev` to start the development server.
+## Getting Started
+
+To run locally:
+
+```bash
+npm install
+npm run dev
+
   
