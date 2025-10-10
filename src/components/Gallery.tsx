@@ -4,6 +4,19 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Badge } from './ui/badge';
 import fsaSpringGbm from '../assets/fsa spring gbm.jpg';
 import dragonMask from '../assets/Dragon mask.jpg';
+import FSAshirt from '../assets/FSAshirt.png';
+import Figmafiesta from '../assets/Figmafiesta.png';
+import NATCON from '../assets/NATCON.png';
+import SaseTechTalk from '../assets/SaseTechTalk.png';
+import UXGivingDay from '../assets/UXGivingDay.png';
+import UXRecruiting from '../assets/UXRecruiting.png';
+import UXSpeaker from '../assets/UXSpeaker.png';
+import glasscheese from '../assets/glasscheese.jpeg';
+import ksabakesale from '../assets/ksabakesale.png';
+import markerpainting from '../assets/markerpainting.jpeg';
+import saseshirt from '../assets/saseshirt.png';
+import ux_portfolio_showcase from '../assets/ux_portfolio_showcase.png';
+
 
 
 const artworks = [
@@ -18,14 +31,14 @@ const artworks = [
     id: 2,
     title: 'Cheeeezzee',
     category: 'Glass Painting',
-    image: 'https://www.behance.net/gallery/232356293/SASE-SHIRT',
+    image: glasscheese,
     tall: false,
   },
   {
     id: 3,
     title: 'SASE T-Shirt',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/232356293/SASE-SHIRT',
+    image: saseshirt,
     tall: true,
   },
   {
@@ -39,56 +52,63 @@ const artworks = [
     id: 5,
     title: 'City Streets',
     category: 'Illustration',
-    image: 'https://www.behance.net/gallery/224151919/Exterior-Design-Composition',
+    image: markerpainting,
     tall: false,
   },
   {
     id: 6,
     title: 'SASE Tech Talk',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/232355923/Tech-talk-flyer',
+    image: SaseTechTalk,
     tall: true,
   },
   {
     id: 7,
     title: 'KSA Bake Sale',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223931219/KSA-Event-Graphic',
+    image: ksabakesale,
     tall: false,
   },
   {
     id: 8,
     title: 'UX Club Portfolio Showcase',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223931149/UX-Design-Club-Event-Graphic',
+    image: ux_portfolio_showcase,
     tall: false,
   },
   {
     id: 9,
     title: 'UX Club Giving Day',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223930423/UX-Design-Club-Giving-Day-Graphic',
+    image: UXGivingDay,
     tall: true,
   },
   {
     id: 10,
     title: 'Join UI/UX Poster',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223930461/UX-Design-Club-Exec-Apps-Graphic',
+    image: UXRecruiting,
     tall: true,
   },
   {
     id: 11,
-    title: 'UX Club Giving Day',
+    title: 'UX Figma Workshop',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223930423/UX-Design-Club-Giving-Day-Graphic',
-    tall: true,
+    image: Figmafiesta,
+    tall: false,
   },
   {
     id: 12,
     title: 'FSA TSHIRT',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223930439/FSA-2025-Tshirt-Design',
+    image: FSAshirt,
+    tall: true,
+  },
+  {
+    id: 12,
+    title: 'UX CS Speaker',
+    category: 'Graphic Design',
+    image: UXSpeaker,
     tall: true,
   },
 ];
