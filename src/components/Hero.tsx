@@ -22,11 +22,8 @@ export function Hero() {
             A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
             and creating compelling visual stories through design and art.
           </p>
-          <p className="max-w-2xl mx-auto text-white/70">
-            B.S. Information Science & Technology
-          </p>
-           <p className="max-w-2xl mx-auto text-white/70">
-            May 2026
+         <p className="max-w-2xl mx-auto text-white/70 font-bold">
+            B.S. Information Science & Technology, May 2026
           </p>
         </div>
 
