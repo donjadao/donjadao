@@ -16,6 +16,7 @@ import ksabakesale from '../assets/portfolio pics/ksabakesale.png';
 import markerpainting from '../assets/portfolio pics/markerpainting.jpeg';
 import saseshirt from '../assets/portfolio pics/saseshirt.png';
 import ux_portfolio_showcase from '../assets/portfolio pics/ux_portfolio_showcase.png';
+import meetux2023 from '../assets/portfolio pics/meetUX2023.jpg';
 
 
 const artworks = [
@@ -108,7 +109,14 @@ const artworks = [
     title: 'UX CS Speaker',
     category: 'Graphic Design',
     image: UXSpeaker,
-    tall: true,
+    tall: false,
+  },
+  {
+    id: 12,
+    title: 'Meet the UX Exec',
+    category: 'Graphic Design',
+    image: meetux2023,
+    tall: false,
   },
 ];
 
