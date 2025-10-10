@@ -38,7 +38,7 @@ export function Hero() {
 
         <div className="flex justify-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/donjadao/donjadao"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-primary"
@@ -47,7 +47,7 @@ export function Hero() {
             <Github className="h-6 w-6" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/donjadao"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-primary"
@@ -56,7 +56,7 @@ export function Hero() {
             <Linkedin className="h-6 w-6" />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:your.ding.don908@gmail.com"
             className="transition-colors hover:text-primary"
             style={{ color: '#7484bc' }}
           >
