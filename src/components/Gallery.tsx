@@ -2,20 +2,23 @@ import { useState } from 'react';
 import { Dialog, DialogContent } from './ui/dialog';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Badge } from './ui/badge';
+import fsaSpringGbm from '../assets/fsa spring gbm.jpg';
+import dragonMask from '../assets/dragon mask.jpg';
+
 
 const artworks = [
   {
     id: 1,
     title: 'Cardboard mask',
     category: '3d Sculpture',
-    image: 'https://www.behance.net/gallery/224442943/Cardboard-Dragon-Mask',
+    image: dragonMask,
     tall: false,
   },
   {
     id: 2,
     title: 'Cheeeezzee',
     category: 'Glass Painting',
-    image: 'https://www.behance.net/gallery/224442903/2pt-Perspective-Glass-Painting',
+    image: 'https://www.behance.net/gallery/232356293/SASE-SHIRT',
     tall: false,
   },
   {
@@ -29,7 +32,7 @@ const artworks = [
     id: 4,
     title: 'FSA SPRING GBM',
     category: 'Graphic Design',
-    image: 'https://www.behance.net/gallery/223930237/FSA-Event-Graphic',
+    image: fsaSpringGbm,
     tall: true,
   },
   {
