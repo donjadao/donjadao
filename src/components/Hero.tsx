@@ -10,19 +10,22 @@ export function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-8">
-          <div className="flex justify-center mb-8">
-            <img src={logo} alt="Logo" className="h-48 w-auto" />
-          </div>
-          <h1 className="mb-4 text-white">
-            Hi, I'm <span className="text-primary">Your Name</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-white/70">
-            A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
-            and creating compelling visual stories through design and art.
-          </p>
-        </div>
+  <div className="max-w-4xl mx-auto text-center">
+    <div className="mb-8">
+      <div className="flex justify-center mb-8">
+        <img src={logo} alt="Logo" className="h-48 w-auto" />
+      </div>
+      <h1 className="mb-4 text-white">
+        Hi, I'm <span className="text-primary">Don Dao</span>
+      </h1>
+      <p className="max-w-2xl mx-auto text-white/70 mb-2">
+        A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
+        and creating compelling visual stories through design and art. 
+      </p>
+      <p className="text-white/70 font-bold mb-1">B.S. in Information Science and Technology</p>
+      <p className="text-white/70 font-bold">May 2026</p>
+    </div>
+  </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Button onClick={scrollToProjects}>
@@ -33,9 +36,9 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="flex justify-center gap-6">
+      <div className="flex justify-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/donjadao/donjadao"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-primary"
@@ -44,7 +47,7 @@ export function Hero() {
             <Github className="h-6 w-6" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/donjadao"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-primary"
@@ -53,7 +56,7 @@ export function Hero() {
             <Linkedin className="h-6 w-6" />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:your.ding.don908@gmail.com"
             className="transition-colors hover:text-primary"
             style={{ color: '#7484bc' }}
           >
