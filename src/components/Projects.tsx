@@ -9,11 +9,11 @@ const projects = [
   {
     id: 1,
     title: 'Matcha Votality Chart',
-    description: 'Complete UI/UX overhaul of a shopping platform focused on improving conversion rates and user experience.',
+    description: 'Created an interactive data visualization highlighting sustainability and economic issues in the matcha industry.',
     image: '<iframe src="https://www.behance.net/embed/project/236304399?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>',
-    tags: ['UI Design', 'UX Research', 'Prototyping'],
+    tags: ['Information Visualization', 'Data Analysis'],
     category: 'web',
-    link: '#',
+    link: 'https://www.behance.net/gallery/236304399/Matcha-Votality-Chart',
     github: '#',
   },
   {
