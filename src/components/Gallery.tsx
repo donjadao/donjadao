@@ -3,7 +3,7 @@ import { Dialog, DialogContent } from './ui/dialog';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Badge } from './ui/badge';
 import fsaSpringGbm from '../assets/fsa spring gbm.jpg';
-import dragonMask from '../assets/dragon mask.jpg';
+import dragonMask from '../assets/Dragon mask.jpg';
 
 
 const artworks = [
