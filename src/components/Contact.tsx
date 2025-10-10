@@ -98,7 +98,7 @@ export function Contact() {
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell me more about your project..."
+                  placeholder="Tell me more about your project...(the submit button is just for decor)"
                   rows={6}
                   required
                 />
