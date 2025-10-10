@@ -22,9 +22,9 @@ export function Hero() {
             A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
             and creating compelling visual stories through design and art.
           </p>
-         <p className="text-white font-bold text-lg">
+         <h2 className="text-white font-bold text-lg">
             B.S. Information Science & Technology, May 2026
-          </p>
+          </h2>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
