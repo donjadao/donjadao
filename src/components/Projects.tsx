@@ -4,7 +4,9 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+
 import matchaThumb from '../assets/Matcha_Infographic.png';
+import bookstorePic from '../assets/bookstore_pic.png';
 
 
 
@@ -22,11 +24,11 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Fitness Tracking Mobile App',
-    description: 'Intuitive mobile app design for tracking workouts and nutrition with gamification elements.',
-    image: 'https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwMDAxNDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Mobile UI', 'User Flow', 'Interaction Design'],
-    category: 'mobile',
+    title: 'Online Book Store',
+    description: 'Intuitive webdesign focused on helping users buy books and be introduced to new ones .',
+    image: bookstorePic,
+    tags: ['Web UX', 'User Flow', 'Interaction Design'],
+    category: 'web',
     link: '#',
     github: '#',
   },
