@@ -16,11 +16,13 @@ export function Hero() {
             <img src={logo} alt="Logo" className="h-48 w-auto" />
           </div>
           <h1 className="mb-4 text-white">
-            Hi, I'm <span className="text-primary">Your Name</span>
+            Hi, I'm <span className="text-primary">Don Dao</span>
           </h1>
           <p className="max-w-2xl mx-auto text-white/70">
             A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
-            and creating compelling visual stories through design and art.
+            and creating compelling visual stories through design and art. 
+            B.S. in Information Science and Technology. 
+            May 2026.
           </p>
         </div>
 
