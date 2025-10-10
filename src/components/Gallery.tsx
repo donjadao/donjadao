@@ -4,19 +4,18 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Badge } from './ui/badge';
 import fsaSpringGbm from '../assets/fsa spring gbm.jpg';
 import dragonMask from '../assets/Dragon mask.jpg';
-import FSAshirt from '../assets/FSAshirt.png';
-import Figmafiesta from '../assets/Figmafiesta.png';
-import NATCON from '../assets/NATCON.png';
-import SaseTechTalk from '../assets/SaseTechTalk.png';
-import UXGivingDay from '../assets/UXGivingDay.png';
-import UXRecruiting from '../assets/UXRecruiting.png';
-import UXSpeaker from '../assets/UXSpeaker.png';
-import glasscheese from '../assets/glasscheese.jpeg';
-import ksabakesale from '../assets/ksabakesale.png';
-import markerpainting from '../assets/markerpainting.jpeg';
-import saseshirt from '../assets/saseshirt.png';
-import ux_portfolio_showcase from '../assets/ux_portfolio_showcase.png';
-
+import FSAshirt from '../assets/portfolio pics/FSAshirt.png';
+import Figmafiesta from '../assets/portfolio pics/Figmafiesta.png';
+import NATCON from '../assets/portfolio pics/NATCON.png';
+import SaseTechTalk from '../assets/portfolio pics/SaseTechTalk.png';
+import UXGivingDay from '../assets/portfolio pics/UXGivingDay.png';
+import UXRecruiting from '../assets/portfolio pics/UXRecruiting.png';
+import UXSpeaker from '../assets/portfolio pics/UXSpeaker.png';
+import glasscheese from '../assets/portfolio pics/glasscheese.jpeg';
+import ksabakesale from '../assets/portfolio pics/ksabakesale.png';
+import markerpainting from '../assets/portfolio pics/markerpainting.jpeg';
+import saseshirt from '../assets/portfolio pics/saseshirt.png';
+import ux_portfolio_showcase from '../assets/portfolio pics/ux_portfolio_showcase.png';
 
 
 const artworks = [
