@@ -9,17 +9,17 @@ export default function RippleLogo() {
   useEffect(() => {
     let app: PIXI.Application;
 
-    const setup = async () => {
-      app = await PIXI.Application.init({
-        width: 300,
-        height: 300,
-        transparent: true,
-        antialias: true,
-      });
+   const app = new PIXI.Application({
+  width: 300,
+  height: 300,
+  transparent: true,
+  antialias: true,
+});
+
 
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(app.canvas);
+        containerRef.current.appendChild(app.view);
       }
 
       app.loader
