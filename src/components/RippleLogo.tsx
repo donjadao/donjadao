@@ -5,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/logoplaceholder.png'; // Adjust path if needed
+import logoPath from './logoplaceholder.png'; // ✅ Local image in same folder
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
