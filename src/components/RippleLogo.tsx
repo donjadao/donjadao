@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { Application, Sprite } from 'pixi.js';
-import placeholderLogo from './logoplaceholder.png'; // Make sure this path is correct
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +20,7 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const logo = Sprite.from(placeholderLogo);
+      const logo = Sprite.from('https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg');
       console.log('Logo sprite:', logo);
 
       logo.anchor.set(0.5);
