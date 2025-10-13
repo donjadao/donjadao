@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Application, Sprite } from 'pixi.js';
-import { DisplacementFilter } from 'pixi.js/filters/displacement';
+import { Application, Sprite, DisplacementFilter } from 'pixi.js';
 import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
 
