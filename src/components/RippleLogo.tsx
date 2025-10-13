@@ -1,8 +1,7 @@
-// RippleLogo.tsx
 import { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
-import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
-import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
+import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+import rippleMap from '../assets/water-ripple-texture-grayscale.png'; // Make sure this is grayscale
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,6 +11,7 @@ export default function RippleLogo() {
       width: 300,
       height: 300,
       transparent: true,
+      antialias: true,
     });
 
     containerRef.current?.appendChild(app.view);
@@ -26,21 +26,22 @@ export default function RippleLogo() {
         logo.y = app.screen.height / 2;
 
         const ripple = new PIXI.Sprite(resources.ripple.texture);
-        const filter = new PIXI.filters.DisplacementFilter(ripple);
         ripple.anchor.set(0.5);
-        ripple.scale.set(2);
+        ripple.scale.set(1.5);
         ripple.alpha = 0.5;
+
+        const filter = new PIXI.filters.DisplacementFilter(ripple);
+        logo.filters = [filter];
 
         app.stage.addChild(ripple);
         app.stage.addChild(logo);
-        logo.filters = [filter];
 
-        let targetX = logo.x;
-        let targetY = logo.y;
+        let targetX = ripple.x;
+        let targetY = ripple.y;
 
         app.stage.interactive = true;
-        app.stage.on('pointermove', (e) => {
-          const pos = e.data.global;
+        app.stage.on('pointermove', (event) => {
+          const pos = event.data.global;
           targetX = pos.x;
           targetY = pos.y;
         });
@@ -57,5 +58,10 @@ export default function RippleLogo() {
     };
   }, []);
 
-  return <div ref={containerRef} className="h-48 w-auto mx-auto" />;
+  return (
+    <div
+      ref={containerRef}
+      style={{ width: '300px', height: '300px', margin: '0 auto' }}
+    />
+  );
 }
