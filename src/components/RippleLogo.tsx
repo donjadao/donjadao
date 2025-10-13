@@ -5,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
+import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; //  My logo
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export default function RippleLogo() {
       await app.init({
         width: 900,
         height: 600,
-        backgroundColor: 0x2a2d45, // ✅ Custom background
+        backgroundColor: 0x2a2d45, //  Custom background
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
@@ -26,7 +26,7 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; //  Verified ripple map
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
