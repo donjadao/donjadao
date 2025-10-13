@@ -18,11 +18,13 @@ export default function RippleLogo() {
       }
 
       const logo = Sprite.from(placeholderLogo);
+      console.log('Logo sprite:', logo);
       logo.anchor.set(0.5);
       logo.x = app.screen.width / 2;
       logo.y = app.screen.height / 2;
       logo.alpha = 1;
       logo.visible = true;
+      logo.tint = 0xffffff;
 
       app.stage.addChild(logo);
     });
