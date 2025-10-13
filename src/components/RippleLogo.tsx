@@ -11,25 +11,15 @@ export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-const observer = new ResizeObserver(() => {
-  const newWidth = container?.clientWidth || 900;
-  const newHeight = container?.clientHeight || 600;
-  app.renderer.resize(newWidth, newHeight);
-
-  logo.x = newWidth / 2;
-  logo.y = newHeight / 2;
-  ripple.x = newWidth / 2;
-  ripple.y = newHeight / 2;
-
-  const scaleFactor = Math.min(
-    newWidth / logo.texture.width,
-    newHeight / logo.texture.height
-  ) * 0.6;
-  logo.scale.set(scaleFactor);
-});
-
-observer.observe(container);
-
+    const setup = async () => {
+      const app = new Application();
+      await app.init({
+        width: 400,
+        height: 200,
+        backgroundColor: 0x2a2d45, // ✅ Custom background
+        resolution: window.devicePixelRatio || 1,
+        antialias: true,
+      });
 
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
@@ -125,9 +115,9 @@ observer.observe(container);
     <div
       ref={containerRef}
       style={{
-        width: '900px',
-        height: '600px',
-        margin: '10 auto',
+        width: '400px',
+        height: '200px',
+        margin: '0 auto',
         position: 'relative',
         zIndex: 1,
       }}
