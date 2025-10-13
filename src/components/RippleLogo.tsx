@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Application, Sprite } from 'pixi.js';
+import { Application, Sprite, Assets } from 'pixi.js';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,22 +20,28 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const logo = Sprite.from(
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png'
-      );
+      const imageUrl =
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
 
-      console.log('Logo sprite:', logo);
-      console.log('Logo dimensions:', logo.width, logo.height);
+      try {
+        const texture = await Assets.load(imageUrl);
+        const logo = new Sprite(texture);
 
-      logo.anchor.set(0.5);
-      logo.x = app.screen.width / 2;
-      logo.y = app.screen.height / 2;
-      logo.alpha = 1;
-      logo.visible = true;
-      logo.tint = 0xffffff;
+        console.log('Loaded texture:', texture);
+        console.log('Logo dimensions:', logo.width, logo.height);
 
-      app.stage.addChild(logo);
-      app.renderer.render(app.stage); // Force repaint
+        logo.anchor.set(0.5);
+        logo.x = app.screen.width / 2;
+        logo.y = app.screen.height / 2;
+        logo.alpha = 1;
+        logo.visible = true;
+        logo.tint = 0xffffff;
+
+        app.stage.addChild(logo);
+        app.renderer.render(app.stage);
+      } catch (err) {
+        console.error('Failed to load image:', err);
+      }
     };
 
     setup();
@@ -58,3 +64,4 @@ export default function RippleLogo() {
     />
   );
 }
+
