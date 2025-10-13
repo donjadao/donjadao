@@ -14,7 +14,8 @@ export function Hero() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <div className="flex justify-center mb-8">
-            <RippleLogo />
+           // <RippleLogo />
+            <img src={logo} alt="Logo" className="h-48 w-auto" />
           </div>
           <h1 className="mb-4 text-white">
             Hi, I'm <span className="text-primary">Don Dao</span>
