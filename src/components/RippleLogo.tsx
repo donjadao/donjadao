@@ -39,12 +39,12 @@ export default function RippleLogo() {
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
 
-        // ✅ Dynamically scale logo to fit within 900×600
+        // Dynamically scale logo to fit within 900×600
         const maxWidth = 900;
         const maxHeight = 600;
         const scaleFactor = Math.min(
-          (maxWidth - 200) / logo.width,
-          (maxHeight - 200) / logo.height
+          (maxWidth - 400) / logo.width,
+          (maxHeight - 400) / logo.height
         );
         logo.scale.set(scaleFactor);
 
