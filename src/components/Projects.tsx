@@ -51,24 +51,6 @@ const projects = [
     category: 'web',
     link: 'https://donjadao.oucreate.com',
   },
-  {
-    id: 5,
-    title: 'Design System',
-    description: 'Comprehensive design system with components, patterns, and guidelines for a tech startup.',
-    image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Design System', 'Components', 'Documentation'],
-    category: 'other',
-    link: '#',
-  },
-  {
-    id: 6,
-    title: 'Interview Question Bank',
-    description: 'Seamless booking experience with beautiful imagery and simplified checkout process.',
-    image: 'https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYwMDAxNDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Web Design', 'E-Commerce', 'Responsive'],
-    category: 'web',
-    link: '#',
-  },
 ];
 
 export function Projects() {
