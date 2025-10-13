@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import * as PIXI from 'pixi.js';
+import { Application, Sprite, filters } from 'pixi.js';
 import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
 
@@ -7,36 +7,44 @@ export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let app: PIXI.Application;
+    let app: Application;
 
-   const app = new PIXI.Application({
-  width: 300,
-  height: 300,
-  transparent: true,
-  antialias: true,
-});
-
+    const setup = async () => {
+      app = await Application.init({
+        width: 400,
+        height: 400,
+        backgroundColor: 0x1e1e2f,
+        antialias: true,
+        resolution: window.devicePixelRatio || 1,
+      });
 
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(app.view);
+        containerRef.current.appendChild(app.canvas);
       }
 
       app.loader
         .add('logo', logoImage)
         .add('ripple', rippleMap)
         .load((loader, resources) => {
-          const logo = new PIXI.Sprite(resources.logo.texture);
+          if (!resources.logo?.texture || !resources.ripple?.texture) {
+            console.error('Missing textures:', resources);
+            return;
+          }
+
+          const logo = new Sprite(resources.logo.texture);
           logo.anchor.set(0.5);
           logo.x = app.screen.width / 2;
           logo.y = app.screen.height / 2;
+          logo.visible = true;
+          logo.alpha = 1;
 
-          const ripple = new PIXI.Sprite(resources.ripple.texture);
+          const ripple = new Sprite(resources.ripple.texture);
           ripple.anchor.set(0.5);
           ripple.scale.set(1.5);
           ripple.alpha = 0.5;
 
-          const filter = new PIXI.filters.DisplacementFilter(ripple);
+          const filter = new filters.DisplacementFilter(ripple);
           logo.filters = [filter];
 
           app.stage.addChild(ripple);
@@ -71,8 +79,8 @@ export default function RippleLogo() {
     <div
       ref={containerRef}
       style={{
-        width: '300px',
-        height: '300px',
+        width: '400px',
+        height: '400px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 1,
