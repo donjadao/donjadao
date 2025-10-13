@@ -71,4 +71,76 @@ export default function RippleLogo() {
         app.stage.eventMode = 'static';
         app.stage.hitArea = app.screen;
 
-        app.stage.on('pointerover
+        app.stage.on('pointerover', () => {
+          isHovering = true;
+          logo.filters = [filter];
+        });
+
+        app.stage.on('pointerout', () => {
+          isHovering = false;
+          logo.filters = [];
+        });
+
+        app.stage.on('pointermove', (event) => {
+          if (isHovering) {
+            const pos = event.global;
+            targetX = pos.x;
+            targetY = pos.y;
+          }
+        });
+
+        app.ticker.add(() => {
+          const ease = 0.1;
+          const target = isHovering
+            ? { x: targetX, y: targetY }
+            : { x: width / 2, y: height / 2 };
+
+          ripple.x += (target.x - ripple.x) * ease;
+          ripple.y += (target.y - ripple.y) * ease;
+
+          if (isHovering) {
+            ripple.rotation += 0.01;
+          }
+        });
+
+        // ResizeObserver for responsiveness
+        const observer = new ResizeObserver(() => {
+          const newWidth = container.offsetWidth || 300;
+          const newHeight = container.offsetHeight || 300;
+          app.renderer.resize(newWidth, newHeight);
+
+          logo.x = newWidth / 2;
+          logo.y = newHeight / 2;
+          ripple.x = newWidth / 2;
+          ripple.y = newHeight / 2;
+
+          const newScale = Math.min(
+            (newWidth - 40) / logo.width,
+            (newHeight - 40) / logo.height
+          );
+          logo.scale.set(newScale);
+        });
+
+        observer.observe(container);
+      } catch (err) {
+        console.error('Failed to load assets:', err);
+      }
+    };
+
+    setup();
+
+    return () => {
+      if (appRef.current) {
+        appRef.current.destroy(true, { children: true });
+        appRef.current = null;
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="w-full h-[300px] sm:h-[400px] md:h-[600px] mx-auto relative z-10"
+    />
+  );
+}
