@@ -5,6 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
+import logoPath from '../assets/logoplaceholder.png'; // Adjust path if needed
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,15 +26,11 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const logoUrl =
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
-
-      const rippleMapUrl =
-        'https://i.imgur.com/2yYayZk.png'; // Verified ripple map with strong contrast
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // Verified ripple map
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
-          Assets.load(logoUrl),
+          Assets.load(logoPath),
           Assets.load(rippleMapUrl),
         ]);
 
@@ -50,7 +47,7 @@ export default function RippleLogo() {
         ripple.x = app.screen.width / 2;
         ripple.y = app.screen.height / 2;
         ripple.scale.set(3);
-        ripple.visible = false; // Hide ripple sprite
+        ripple.visible = false;
 
         const filter = new DisplacementFilter(ripple, 300);
         filter.padding = 100;
