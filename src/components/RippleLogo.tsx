@@ -46,8 +46,10 @@ export default function RippleLogo() {
       ripple.alpha = 1;
 
       // Create and apply displacement filter
-      const filter = new DisplacementFilter(ripple, 50);
+      ripple.scale.set(3); // Make ripple map larger
+      const filter = new DisplacementFilter(ripple, 150); // Increase distortion strength
       logo.filters = [filter];
+
 
       // Add to stage
       app.stage.addChild(ripple);
