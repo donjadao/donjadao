@@ -1,17 +1,21 @@
 import { useEffect, useRef } from 'react';
 import { Application, Sprite } from 'pixi.js';
-import placeholderLogo from './logoplaceholder.png';
+import placeholderLogo from './logoplaceholder.png'; // Make sure this path is correct
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const app = new Application();
-    app.init({
-      width: 400,
-      height: 400,
-      backgroundColor: 0x1e1e2f,
-    }).then(() => {
+    const setup = async () => {
+      const app = new Application();
+      await app.init({
+        width: 400,
+        height: 400,
+        backgroundColor: 0x1e1e2f,
+        resolution: window.devicePixelRatio || 1,
+        antialias: true,
+      });
+
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
         containerRef.current.appendChild(app.canvas);
@@ -19,6 +23,7 @@ export default function RippleLogo() {
 
       const logo = Sprite.from(placeholderLogo);
       console.log('Logo sprite:', logo);
+
       logo.anchor.set(0.5);
       logo.x = app.screen.width / 2;
       logo.y = app.screen.height / 2;
@@ -27,10 +32,12 @@ export default function RippleLogo() {
       logo.tint = 0xffffff;
 
       app.stage.addChild(logo);
-    });
+    };
+
+    setup();
 
     return () => {
-      app.destroy(true, true);
+      // Optional cleanup
     };
   }, []);
 
@@ -42,8 +49,3 @@ export default function RippleLogo() {
         height: '400px',
         margin: '0 auto',
         position: 'relative',
-        zIndex: 1,
-      }}
-    />
-  );
-}
