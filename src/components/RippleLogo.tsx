@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
 import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
-import rippleMap from 'src/assets/water-ripple-texture-blue-background.jpg'; // Grayscale ripple texture
+import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
