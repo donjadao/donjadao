@@ -18,10 +18,13 @@ export default function RippleLogo() {
       const container = containerRef.current;
       if (!container) return;
 
+      const width = container.clientWidth || window.innerWidth;
+      const height = container.clientHeight || window.innerHeight;
+
       const app = new Application();
       await app.init({
-        width: container.clientWidth,
-        height: container.clientHeight,
+        width,
+        height,
         backgroundColor: 0x2a2d45,
         resolution: window.devicePixelRatio || 1,
         antialias: true,
@@ -41,10 +44,14 @@ export default function RippleLogo() {
 
         const logo = new Sprite(logoTexture);
         logo.anchor.set(0.5);
+        logo.x = width / 2;
+        logo.y = height / 2;
         logoRef.current = logo;
 
         const ripple = new Sprite(rippleTexture);
         ripple.anchor.set(0.5);
+        ripple.x = width / 2;
+        ripple.y = height / 2;
         ripple.scale.set(3);
         ripple.visible = false;
         rippleRef.current = ripple;
@@ -94,9 +101,19 @@ export default function RippleLogo() {
           }
         });
 
-        const resize = () => {
-          const newWidth = container.clientWidth;
-          const newHeight = container.clientHeight;
+        // Wait for texture to load before scaling
+        logo.texture.baseTexture.on('loaded', () => {
+          const scaleFactor = Math.min(
+            width / logo.texture.width,
+            height / logo.texture.height
+          ) * 0.6;
+          logo.scale.set(scaleFactor);
+        });
+
+        // ResizeObserver for responsiveness
+        const observer = new ResizeObserver(() => {
+          const newWidth = container.clientWidth || window.innerWidth;
+          const newHeight = container.clientHeight || window.innerHeight;
           app.renderer.resize(newWidth, newHeight);
 
           logo.x = newWidth / 2;
@@ -104,16 +121,13 @@ export default function RippleLogo() {
           ripple.x = newWidth / 2;
           ripple.y = newHeight / 2;
 
-          const scaleFactor = Math.min(
+          const newScale = Math.min(
             newWidth / logo.texture.width,
             newHeight / logo.texture.height
-          ) * 0.6; // Adjust multiplier for fill
-          logo.scale.set(scaleFactor);
-        };
+          ) * 0.6;
+          logo.scale.set(newScale);
+        });
 
-        resize();
-
-        const observer = new ResizeObserver(resize);
         observer.observe(container);
       } catch (err) {
         console.error('Failed to load assets:', err);
