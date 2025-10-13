@@ -101,7 +101,6 @@ export default function RippleLogo() {
           }
         });
 
-        // Wait for texture to load before scaling
         logo.texture.baseTexture.on('loaded', () => {
           const scaleFactor = Math.min(
             width / logo.texture.width,
@@ -110,7 +109,6 @@ export default function RippleLogo() {
           logo.scale.set(scaleFactor);
         });
 
-        // ResizeObserver for responsiveness
         const observer = new ResizeObserver(() => {
           const newWidth = container.clientWidth || 800;
           const newHeight = container.clientHeight || 400;
@@ -147,7 +145,7 @@ export default function RippleLogo() {
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-[900px] aspect-[3/2] sm:max-w-[600px] sm:aspect-[3/2] mx-auto px-4 relative z-10"
+      className="w-full max-w-[800px] aspect-[2/1] sm:max-w-[500px] sm:aspect-[2/1] mx-auto px-4 relative z-10"
     />
   );
 }
