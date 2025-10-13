@@ -1,6 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+//import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 import RippleLogo from '../components/RippleLogo';
 // <RippleLogo />
 //<img src={logo} alt="Logo" className="h-48 w-auto" />
