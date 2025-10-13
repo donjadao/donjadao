@@ -26,7 +26,8 @@ export default function RippleLogo() {
       }
 
       const logoUrl =
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
+        'https://www.turbosquid.com/FullPreview/1137259'
+        //'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
 
       const rippleMapUrl =
         'https://www.turbosquid.com/FullPreview/1137259'; // Replace with your own ripple map if needed
