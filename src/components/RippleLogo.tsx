@@ -42,12 +42,12 @@ export default function RippleLogo() {
       ripple.anchor.set(0.5);
       ripple.x = app.screen.width / 2;
       ripple.y = app.screen.height / 2;
-      ripple.scale.set(2);
+      ripple.scale.set(4);
       ripple.alpha = 1;
 
       // Create and apply displacement filter
       ripple.scale.set(3); // Make ripple map larger
-      const filter = new DisplacementFilter(ripple, 150); // Increase distortion strength
+      const filter = new DisplacementFilter(ripple, 1000); // Increase distortion strength
       logo.filters = [filter];
 
 
