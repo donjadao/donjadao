@@ -1,8 +1,10 @@
+// RippleLogo.tsx
 import { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
-import logoImage from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+import logoImage from 'path/to/logo.png'; // Replace with actual path
+import rippleMap from 'path/to/ripple-map.png'; // Grayscale ripple texture
 
-export function RippleLogo() {
+export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -10,38 +12,50 @@ export function RippleLogo() {
       width: 300,
       height: 300,
       transparent: true,
-      antialias: true,
     });
 
-    if (containerRef.current) {
-      containerRef.current.appendChild(app.view);
-    }
+    containerRef.current?.appendChild(app.view);
 
-    const logo = PIXI.Sprite.from(logoImage);
-    logo.anchor.set(0.5);
-    logo.x = app.screen.width / 2;
-    logo.y = app.screen.height / 2;
+    app.loader
+      .add('logo', logoImage)
+      .add('ripple', rippleMap)
+      .load((loader, resources) => {
+        const logo = new PIXI.Sprite(resources.logo.texture);
+        logo.anchor.set(0.5);
+        logo.x = app.screen.width / 2;
+        logo.y = app.screen.height / 2;
 
-    const displacementSprite = PIXI.Sprite.from('https://pixijs.io/examples/examples/assets/displacement_map_repeat.jpg');
-    displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-    displacementSprite.scale.set(2);
-    app.stage.addChild(displacementSprite);
+        const ripple = new PIXI.Sprite(resources.ripple.texture);
+        const filter = new PIXI.filters.DisplacementFilter(ripple);
+        ripple.anchor.set(0.5);
+        ripple.scale.set(2);
+        ripple.alpha = 0.5;
 
-    const displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-    logo.filters = [displacementFilter];
+        app.stage.addChild(ripple);
+        app.stage.addChild(logo);
+        logo.filters = [filter];
 
-    app.stage.addChild(logo);
+        let targetX = logo.x;
+        let targetY = logo.y;
 
-    app.stage.interactive = true;
-    app.stage.on('pointermove', (event) => {
-      displacementSprite.x = event.data.global.x - displacementSprite.width / 2;
-      displacementSprite.y = event.data.global.y - displacementSprite.height / 2;
-    });
+        app.stage.interactive = true;
+        app.stage.on('pointermove', (e) => {
+          const pos = e.data.global;
+          targetX = pos.x;
+          targetY = pos.y;
+        });
+
+        app.ticker.add(() => {
+          ripple.x += (targetX - ripple.x) * 0.1;
+          ripple.y += (targetY - ripple.y) * 0.1;
+          ripple.rotation += 0.01;
+        });
+      });
 
     return () => {
-      app.destroy(true, { children: true });
+      app.destroy(true, true);
     };
   }, []);
 
-  return <div ref={containerRef} className="mx-auto w-[300px] h-[300px]" />;
+  return <div ref={containerRef} className="h-48 w-auto mx-auto" />;
 }
