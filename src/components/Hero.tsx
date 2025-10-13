@@ -1,11 +1,7 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-//import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
-import placeholderLogo from './logoplaceholder.png';
-
 import RippleLogo from '../components/RippleLogo';
-// <RippleLogo />
-//<img src={logo} alt="Logo" className="h-48 w-auto" />
+
 export function Hero() {
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
@@ -13,42 +9,50 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-8">
-          <div className="flex justify-center mb-8">
+    <section
+      id="home"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 text-center"
+    >
+      <div className="max-w-4xl w-full mx-auto">
+        {/* Ripple Logo */}
+        <div className="flex justify-center mb-8">
+          <div className="w-[180px] sm:w-[240px] md:w-[300px] overflow-hidden">
             <RippleLogo />
           </div>
-          <h1 className="text-white text-xl font-bold">
-              <span className="text-4xl font-bold mr-2">Hi, I'm</span>
-              <span className="text-primary text-xl font-bold">Don Dao</span>
-          </h1>
-          <h2 className="max-w-2xl mx-auto text-white">
-            B.S. Information Science & Technology, May 2026
-          </h2>
-          <p className="max-w-2xl mx-auto text-white/70">
-            A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
-            and creating compelling visual stories through design and art.
-          </p>
-         
         </div>
 
+        {/* Heading */}
+        <h1 className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <span className="mr-2">Hi, I'm</span>
+          <span className="text-primary">Don Dao</span>
+        </h1>
+
+        {/* Subheading */}
+        <h2 className="text-white font-semibold text-base sm:text-lg md:text-xl mb-2">
+          B.S. Information Science & Technology, May 2026
+        </h2>
+
+        {/* Description */}
+        <p className="max-w-2xl mx-auto text-white/70 text-base sm:text-lg md:text-xl mb-6">
+          A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
+          and creating compelling visual stories through design and art.
+        </p>
+
+        {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <Button onClick={scrollToProjects}>
-            View My Work
-          </Button>
+          <Button onClick={scrollToProjects}>View My Work</Button>
           <Button variant="outline" asChild>
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>
 
+        {/* Social Icons */}
         <div className="flex justify-center gap-6">
           <a
             href="https://github.com/donjadao"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-primary"
-            style={{ color: '#7484bc' }}
+            className="transition-colors hover:text-primary text-[#7484bc]"
           >
             <Github className="h-6 w-6" />
           </a>
@@ -56,27 +60,17 @@ export function Hero() {
             href="https://www.linkedin.com/in/donjadao"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-primary"
-            style={{ color: '#7484bc' }}
+            className="transition-colors hover:text-primary text-[#7484bc]"
           >
             <Linkedin className="h-6 w-6" />
           </a>
           <a
             href="mailto:ding.don908@gmail.com"
-            className="transition-colors hover:text-primary"
-            style={{ color: '#7484bc' }}
+            className="transition-colors hover:text-primary text-[#7484bc]"
           >
             <Mail className="h-6 w-6" />
           </a>
         </div>
-
-        <button
-          onClick={scrollToProjects}
-          className="mt-16 transition-colors animate-bounce hover:text-primary"
-          style={{ color: '#e8a5ad' }}
-        >
-          <ArrowDown className="h-8 w-8 mx-auto" />
-        </button>
       </div>
     </section>
   );
