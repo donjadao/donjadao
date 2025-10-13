@@ -7,57 +7,63 @@ export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const app = new PIXI.Application({
-      width: 300,
-      height: 300,
-      transparent: true,
-      antialias: true,
-    });
+    let app: PIXI.Application;
 
-    if (containerRef.current) {
-      containerRef.current.innerHTML = ''; // Clear any previous canvas
-      containerRef.current.appendChild(app.view);
-    }
-
-    app.loader
-      .add('logo', logoImage)
-      .add('ripple', rippleMap)
-      .load((loader, resources) => {
-        const logo = new PIXI.Sprite(resources.logo.texture);
-        logo.anchor.set(0.5);
-        logo.x = app.screen.width / 2;
-        logo.y = app.screen.height / 2;
-
-        const ripple = new PIXI.Sprite(resources.ripple.texture);
-        ripple.anchor.set(0.5);
-        ripple.scale.set(1.5);
-        ripple.alpha = 0.5;
-
-        const filter = new PIXI.filters.DisplacementFilter(ripple);
-        logo.filters = [filter];
-
-        app.stage.addChild(ripple);
-        app.stage.addChild(logo);
-
-        let targetX = ripple.x;
-        let targetY = ripple.y;
-
-        app.stage.interactive = true;
-        app.stage.on('pointermove', (event) => {
-          const pos = event.data.global;
-          targetX = pos.x;
-          targetY = pos.y;
-        });
-
-        app.ticker.add(() => {
-          ripple.x += (targetX - ripple.x) * 0.1;
-          ripple.y += (targetY - ripple.y) * 0.1;
-          ripple.rotation += 0.01;
-        });
+    const setup = async () => {
+      app = await PIXI.Application.init({
+        width: 300,
+        height: 300,
+        transparent: true,
+        antialias: true,
       });
 
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+        containerRef.current.appendChild(app.canvas);
+      }
+
+      app.loader
+        .add('logo', logoImage)
+        .add('ripple', rippleMap)
+        .load((loader, resources) => {
+          const logo = new PIXI.Sprite(resources.logo.texture);
+          logo.anchor.set(0.5);
+          logo.x = app.screen.width / 2;
+          logo.y = app.screen.height / 2;
+
+          const ripple = new PIXI.Sprite(resources.ripple.texture);
+          ripple.anchor.set(0.5);
+          ripple.scale.set(1.5);
+          ripple.alpha = 0.5;
+
+          const filter = new PIXI.filters.DisplacementFilter(ripple);
+          logo.filters = [filter];
+
+          app.stage.addChild(ripple);
+          app.stage.addChild(logo);
+
+          let targetX = ripple.x;
+          let targetY = ripple.y;
+
+          app.stage.interactive = true;
+          app.stage.on('pointermove', (event) => {
+            const pos = event.data.global;
+            targetX = pos.x;
+            targetY = pos.y;
+          });
+
+          app.ticker.add(() => {
+            ripple.x += (targetX - ripple.x) * 0.1;
+            ripple.y += (targetY - ripple.y) * 0.1;
+            ripple.rotation += 0.01;
+          });
+        });
+    };
+
+    setup();
+
     return () => {
-      app.destroy(true, true);
+      app?.destroy(true, true);
     };
   }, []);
 
