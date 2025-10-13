@@ -20,8 +20,12 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const logo = Sprite.from('https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg');
+      const logo = Sprite.from(
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png'
+      );
+
       console.log('Logo sprite:', logo);
+      console.log('Logo dimensions:', logo.width, logo.height);
 
       logo.anchor.set(0.5);
       logo.x = app.screen.width / 2;
@@ -31,6 +35,7 @@ export default function RippleLogo() {
       logo.tint = 0xffffff;
 
       app.stage.addChild(logo);
+      app.renderer.render(app.stage); // Force repaint
     };
 
     setup();
