@@ -43,8 +43,8 @@ export default function RippleLogo() {
         const maxWidth = 900;
         const maxHeight = 600;
         const scaleFactor = Math.min(
-          (maxWidth - 40) / logo.width,
-          (maxHeight - 40) / logo.height
+          (maxWidth - 200) / logo.width,
+          (maxHeight - 200) / logo.height
         );
         logo.scale.set(scaleFactor);
 
@@ -117,7 +117,7 @@ export default function RippleLogo() {
       style={{
         width: '900px',
         height: '600px',
-        margin: '0 auto',
+        margin: '10 auto',
         position: 'relative',
         zIndex: 1,
       }}
