@@ -5,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export default function RippleLogo() {
       await app.init({
         width: 900,
         height: 600,
-        backgroundColor: 0x2a2d45,
+        backgroundColor: 0x2a2d45, // ✅ Custom background
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
@@ -26,7 +26,7 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png';
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -39,6 +39,7 @@ export default function RippleLogo() {
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
 
+        // ✅ Dynamically scale logo to fit within 900×600
         const maxWidth = 900;
         const maxHeight = 600;
         const scaleFactor = Math.min(
@@ -85,9 +86,15 @@ export default function RippleLogo() {
         });
 
         app.ticker.add(() => {
+          const ease = 0.1;
+          const target = isHovering
+            ? { x: targetX, y: targetY }
+            : { x: app.screen.width / 2, y: app.screen.height / 2 };
+
+          ripple.x += (target.x - ripple.x) * ease;
+          ripple.y += (target.y - ripple.y) * ease;
+
           if (isHovering) {
-            ripple.x += (targetX - ripple.x) * 0.1;
-            ripple.y += (targetY - ripple.y) * 0.1;
             ripple.rotation += 0.01;
           }
         });
