@@ -5,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
+import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export default function RippleLogo() {
       await app.init({
         width: 900,
         height: 600,
-        backgroundColor: 0x2a2d45, // ✅ Custom background
+        backgroundColor: 0x2a2d45,
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
@@ -26,7 +26,7 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png';
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -39,7 +39,6 @@ export default function RippleLogo() {
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
 
-        // ✅ Dynamically scale logo to fit within 900×600
         const maxWidth = 900;
         const maxHeight = 600;
         const scaleFactor = Math.min(
@@ -64,19 +63,33 @@ export default function RippleLogo() {
 
         let targetX = ripple.x;
         let targetY = ripple.y;
+        let isHovering = false;
 
         app.stage.eventMode = 'static';
         app.stage.hitArea = app.screen;
+
+        app.stage.on('pointerover', () => {
+          isHovering = true;
+        });
+
+        app.stage.on('pointerout', () => {
+          isHovering = false;
+        });
+
         app.stage.on('pointermove', (event) => {
-          const pos = event.global;
-          targetX = pos.x;
-          targetY = pos.y;
+          if (isHovering) {
+            const pos = event.global;
+            targetX = pos.x;
+            targetY = pos.y;
+          }
         });
 
         app.ticker.add(() => {
-          ripple.x += (targetX - ripple.x) * 0.1;
-          ripple.y += (targetY - ripple.y) * 0.1;
-          ripple.rotation += 0.01;
+          if (isHovering) {
+            ripple.x += (targetX - ripple.x) * 0.1;
+            ripple.y += (targetY - ripple.y) * 0.1;
+            ripple.rotation += 0.01;
+          }
         });
       } catch (err) {
         console.error('Failed to load assets:', err);
