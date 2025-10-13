@@ -1,8 +1,9 @@
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
-// import RippleLogo from '../components/RippleLogo';
-      // <RippleLogo />
+// import RippleLogo from '../components/RippleLogo'; src/components/RippleLogo.tsx 
+// <RippleLogo />
+//<img src={logo} alt="Logo" className="h-48 w-auto" />
 export function Hero() {
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
@@ -14,7 +15,7 @@ export function Hero() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="Logo" className="h-48 w-auto" />
+            <RippleLogo />
           </div>
           <h1 className="mb-4 text-white">
             Hi, I'm <span className="text-primary">Don Dao</span>
