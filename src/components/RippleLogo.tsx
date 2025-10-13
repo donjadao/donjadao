@@ -1,7 +1,7 @@
 // RippleLogo.tsx
 import { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
-import logoImage from 'src/assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // Replace with actual path
+import logo from 'figma:asset/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 import rippleMap from 'src/assets/water-ripple-texture-blue-background.jpg'; // Grayscale ripple texture
 
 export default function RippleLogo() {
