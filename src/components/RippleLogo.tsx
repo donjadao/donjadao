@@ -11,7 +11,7 @@ export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-   const observer = new ResizeObserver(() => {
+const observer = new ResizeObserver(() => {
   const newWidth = container?.clientWidth || 900;
   const newHeight = container?.clientHeight || 600;
   app.renderer.resize(newWidth, newHeight);
@@ -29,6 +29,7 @@ export default function RippleLogo() {
 });
 
 observer.observe(container);
+
 
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
