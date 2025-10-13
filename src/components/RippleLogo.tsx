@@ -5,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Local image in different folder
+import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,9 +14,9 @@ export default function RippleLogo() {
     const setup = async () => {
       const app = new Application();
       await app.init({
-        width: 1350,
+        width: 900,
         height: 600,
-        backgroundColor: 0x2a2d45,
+        backgroundColor: 0x2a2d45, // ✅ Custom background
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
@@ -26,7 +26,7 @@ export default function RippleLogo() {
         containerRef.current.appendChild(app.canvas);
       }
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // Verified ripple map
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -38,9 +38,15 @@ export default function RippleLogo() {
         logo.anchor.set(0.5);
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
-        logo.alpha = 1;
-        logo.visible = true;
-        logo.tint = 0xffffff;
+
+        // ✅ Dynamically scale logo to fit within 900×600
+        const maxWidth = 900;
+        const maxHeight = 600;
+        const scaleFactor = Math.min(
+          (maxWidth - 40) / logo.width,
+          (maxHeight - 40) / logo.height
+        );
+        logo.scale.set(scaleFactor);
 
         const ripple = new Sprite(rippleTexture);
         ripple.anchor.set(0.5);
@@ -88,7 +94,7 @@ export default function RippleLogo() {
     <div
       ref={containerRef}
       style={{
-        width: '1350px',
+        width: '900px',
         height: '600px',
         margin: '0 auto',
         position: 'relative',
