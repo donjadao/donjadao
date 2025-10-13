@@ -43,8 +43,8 @@ export default function RippleLogo() {
         const maxWidth = 900;
         const maxHeight = 600;
         const scaleFactor = Math.min(
-          (maxWidth - 400) / logo.width,
-          (maxHeight - 400) / logo.height
+          (maxWidth - 40) / logo.width,
+          (maxHeight - 40) / logo.height
         );
         logo.scale.set(scaleFactor);
 
@@ -70,12 +70,12 @@ export default function RippleLogo() {
 
         app.stage.on('pointerover', () => {
           isHovering = true;
-          logo.filters = [filter]; // ✅ Apply ripple
+          logo.filters = [filter]; //  Apply ripple
         });
 
         app.stage.on('pointerout', () => {
           isHovering = false;
-          logo.filters = []; // ✅ Remove ripple
+          logo.filters = []; //  Remove ripple
         });
 
         app.stage.on('pointermove', (event) => {
@@ -117,7 +117,7 @@ export default function RippleLogo() {
       style={{
         width: '900px',
         height: '600px',
-        margin: '10 auto',
+        margin: '10px auto',
         position: 'relative',
         zIndex: 1,
       }}
