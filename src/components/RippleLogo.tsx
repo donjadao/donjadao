@@ -1,8 +1,8 @@
 // RippleLogo.tsx
 import { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
-import logoImage from 'path/to/logo.png'; // Replace with actual path
-import rippleMap from 'path/to/ripple-map.png'; // Grayscale ripple texture
+import logoImage from 'src/assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // Replace with actual path
+import rippleMap from 'src/assets/water-ripple-texture-blue-background.jpg'; // Grayscale ripple texture
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
