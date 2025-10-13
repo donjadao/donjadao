@@ -18,8 +18,8 @@ export default function RippleLogo() {
       const container = containerRef.current;
       if (!container) return;
 
-      const width = container.clientWidth || 900;
-      const height = container.clientHeight || 600;
+      const width = container.clientWidth || 800;
+      const height = container.clientHeight || 400;
 
       const app = new Application();
       await app.init({
@@ -112,8 +112,8 @@ export default function RippleLogo() {
 
         // ResizeObserver for responsiveness
         const observer = new ResizeObserver(() => {
-          const newWidth = container.clientWidth || 900;
-          const newHeight = container.clientHeight || 600;
+          const newWidth = container.clientWidth || 800;
+          const newHeight = container.clientHeight || 400;
           app.renderer.resize(newWidth, newHeight);
 
           logo.x = newWidth / 2;
