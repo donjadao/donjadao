@@ -4,7 +4,6 @@ import { DisplacementFilter } from 'pixi.js/filters/displacement';
 import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
 
-
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -29,6 +28,10 @@ export default function RippleLogo() {
         .add('logo', logoImage)
         .add('ripple', rippleMap)
         .load((loader, resources) => {
+          // Debug: check if textures loaded
+          console.log('Logo texture:', resources.logo?.texture);
+          console.log('Ripple texture:', resources.ripple?.texture);
+
           if (!resources.logo?.texture || !resources.ripple?.texture) {
             console.error('Missing textures:', resources);
             return;
@@ -40,13 +43,14 @@ export default function RippleLogo() {
           logo.y = app.screen.height / 2;
           logo.visible = true;
           logo.alpha = 1;
+          logo.tint = 0xffffff; // Ensures visibility on dark background
 
           const ripple = new Sprite(resources.ripple.texture);
           ripple.anchor.set(0.5);
           ripple.scale.set(1.5);
           ripple.alpha = 0.5;
 
-          const filter = new filters.DisplacementFilter(ripple);
+          const filter = new DisplacementFilter(ripple);
           logo.filters = [filter];
 
           app.stage.addChild(ripple);
