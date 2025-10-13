@@ -5,28 +5,34 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
+import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const appRef = useRef<Application | null>(null);
 
   useEffect(() => {
     const setup = async () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const width = container.offsetWidth || 300;
+      const height = container.offsetHeight || 300;
+
       const app = new Application();
       await app.init({
-        width: 400,
-        height: 300,
-        backgroundColor: 0x2a2d45, // ✅ Custom background
+        width,
+        height,
+        backgroundColor: 0x2a2d45,
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
 
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(app.canvas);
-      }
+      appRef.current = app;
+      container.innerHTML = '';
+      container.appendChild(app.canvas);
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png';
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -36,22 +42,19 @@ export default function RippleLogo() {
 
         const logo = new Sprite(logoTexture);
         logo.anchor.set(0.5);
-        logo.x = app.screen.width / 2;
-        logo.y = app.screen.height / 2;
+        logo.x = width / 2;
+        logo.y = height / 2;
 
-        // ✅ Dynamically scale logo to fit within 900×600
-        const maxWidth = 900;
-        const maxHeight = 600;
         const scaleFactor = Math.min(
-          (maxWidth - 40) / logo.width,
-          (maxHeight - 40) / logo.height
-        );
+          width / logo.width,
+          height / logo.height
+        ) * 0.6; // Adjust multiplier for fill
         logo.scale.set(scaleFactor);
 
         const ripple = new Sprite(rippleTexture);
         ripple.anchor.set(0.5);
-        ripple.x = app.screen.width / 2;
-        ripple.y = app.screen.height / 2;
+        ripple.x = width / 2;
+        ripple.y = height / 2;
         ripple.scale.set(3);
         ripple.visible = false;
 
@@ -70,12 +73,12 @@ export default function RippleLogo() {
 
         app.stage.on('pointerover', () => {
           isHovering = true;
-          logo.filters = [filter]; // ✅ Apply ripple
+          logo.filters = [filter];
         });
 
         app.stage.on('pointerout', () => {
           isHovering = false;
-          logo.filters = []; // ✅ Remove ripple
+          logo.filters = [];
         });
 
         app.stage.on('pointermove', (event) => {
@@ -90,7 +93,7 @@ export default function RippleLogo() {
           const ease = 0.1;
           const target = isHovering
             ? { x: targetX, y: targetY }
-            : { x: app.screen.width / 2, y: app.screen.height / 2 };
+            : { x: width / 2, y: height / 2 };
 
           ripple.x += (target.x - ripple.x) * ease;
           ripple.y += (target.y - ripple.y) * ease;
@@ -99,6 +102,26 @@ export default function RippleLogo() {
             ripple.rotation += 0.01;
           }
         });
+
+        // ResizeObserver for responsiveness
+        const observer = new ResizeObserver(() => {
+          const newWidth = container.offsetWidth || 300;
+          const newHeight = container.offsetHeight || 300;
+          app.renderer.resize(newWidth, newHeight);
+
+          logo.x = newWidth / 2;
+          logo.y = newHeight / 2;
+          ripple.x = newWidth / 2;
+          ripple.y = newHeight / 2;
+
+          const newScale = Math.min(
+            newWidth / logo.width,
+            newHeight / logo.height
+          ) * 0.6;
+          logo.scale.set(newScale);
+        });
+
+        observer.observe(container);
       } catch (err) {
         console.error('Failed to load assets:', err);
       }
@@ -107,20 +130,17 @@ export default function RippleLogo() {
     setup();
 
     return () => {
-      // Optional cleanup
+      if (appRef.current) {
+        appRef.current.destroy(true, { children: true });
+        appRef.current = null;
+      }
     };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      style={{
-        width: '400px',
-        height: '300px',
-        margin: '0 auto',
-        position: 'relative',
-        zIndex: 1,
-      }}
+      className="w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] mx-auto relative z-10"
     />
   );
 }
