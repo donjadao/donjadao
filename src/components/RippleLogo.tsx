@@ -8,13 +8,24 @@ export default function RippleLogo() {
 
   useEffect(() => {
     const app = new PIXI.Application({
-      width: 300,
-      height: 300,
-      transparent: true,
-      antialias: true,
-    });
+   return (
+  <div
+    ref={containerRef}
+    style={{
+      width: '300px',
+      height: '300px',
+      margin: '0 auto',
+      position: 'relative',
+      zIndex: 1,
+    }}
+  />
+);
 
-    containerRef.current?.appendChild(app.view);
+if (containerRef.current) {
+  containerRef.current.innerHTML = ''; // Clear any previous canvas
+  containerRef.current.appendChild(app.view);
+}
+
 
     app.loader
       .add('logo', logoImage)
