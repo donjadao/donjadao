@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Application, Sprite, DisplacementFilter } from 'pixi.js';
-import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+//import logoImage from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
+import placeholderLogo from './logoplaceholder.png';
 import rippleMap from '../assets/water-ripple-texture-blue-background.jpg';
 
 export default function RippleLogo() {
