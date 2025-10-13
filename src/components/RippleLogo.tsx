@@ -26,11 +26,10 @@ export default function RippleLogo() {
       }
 
       const logoUrl =
-        'https://www.turbosquid.com/FullPreview/1137259'
-        //'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
 
       const rippleMapUrl =
-        'https://www.turbosquid.com/FullPreview/1137259'; // Replace with your own ripple map if needed
+        'https://i.imgur.com/2yYayZk.png'; // Verified ripple map with strong contrast
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -51,9 +50,9 @@ export default function RippleLogo() {
         ripple.x = app.screen.width / 2;
         ripple.y = app.screen.height / 2;
         ripple.scale.set(3);
-        ripple.alpha = 1;
+        ripple.visible = false; // Hide ripple sprite
 
-        const filter = new DisplacementFilter(ripple, 150);
+        const filter = new DisplacementFilter(ripple, 300);
         filter.padding = 100;
         logo.filters = [filter];
 
