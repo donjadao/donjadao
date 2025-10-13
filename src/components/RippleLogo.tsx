@@ -29,7 +29,7 @@ export default function RippleLogo() {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/640px-PNG_transparency_demonstration_1.png';
 
       const rippleMapUrl =
-        'https://www.filterforge.com/filters/940-normal-seamless.html'; // Replace with your own ripple map if needed
+        'https://www.turbosquid.com/FullPreview/1137259'; // Replace with your own ripple map if needed
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
