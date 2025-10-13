@@ -49,3 +49,8 @@ export default function RippleLogo() {
         height: '400px',
         margin: '0 auto',
         position: 'relative',
+        zIndex: 1,
+      }}
+    />
+  );
+}
