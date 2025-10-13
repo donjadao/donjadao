@@ -57,7 +57,6 @@ export default function RippleLogo() {
 
         const filter = new DisplacementFilter(ripple, 300);
         filter.padding = 100;
-        logo.filters = [filter];
 
         app.stage.addChild(ripple);
         app.stage.addChild(logo);
@@ -71,10 +70,12 @@ export default function RippleLogo() {
 
         app.stage.on('pointerover', () => {
           isHovering = true;
+          logo.filters = [filter]; // ✅ Apply ripple
         });
 
         app.stage.on('pointerout', () => {
           isHovering = false;
+          logo.filters = []; // ✅ Remove ripple
         });
 
         app.stage.on('pointermove', (event) => {
