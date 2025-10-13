@@ -23,7 +23,7 @@ export function Hero() {
               <span className="text-4xl font-bold mr-2">Hi, I'm</span>
               <span className="text-primary text-xl font-bold">Don Dao</span>
           </h1>
-          <h2 className="text-white font-bold text-lg">
+          <h2 className="max-w-2xl mx-auto text-white">
             B.S. Information Science & Technology, May 2026
           </h2>
           <p className="max-w-2xl mx-auto text-white/70">
