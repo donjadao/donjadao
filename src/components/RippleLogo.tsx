@@ -14,9 +14,9 @@ export default function RippleLogo() {
     const setup = async () => {
       const app = new Application();
       await app.init({
-        width: 400,
-        height: 400,
-        backgroundColor: 0x1e1e2f,
+        width: 1350,
+        height: 600,
+        backgroundColor: 0x2a2d45,
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
@@ -88,8 +88,8 @@ export default function RippleLogo() {
     <div
       ref={containerRef}
       style={{
-        width: '400px',
-        height: '400px',
+        width: '1350px',
+        height: '600px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 1,
