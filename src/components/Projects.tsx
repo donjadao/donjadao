@@ -35,7 +35,7 @@ const projects = [
   {
     id: 3,
     title: 'Greek Life Yelp',
-    description: 'A centralized hub to learn about a universities Greek life communities.',
+    description: 'Work in Progres. A centralized hub to learn about a universities Greek life communities.',
     image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['Dashboard', 'UX Design', 'Web App', 'UX Research'],
     category: 'web',
