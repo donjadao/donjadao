@@ -16,8 +16,8 @@ export function Hero() {
       <div className="max-w-4xl w-full mx-auto">
         {/* Ripple Logo */}
         <div className="flex justify-center mb-8">
-          <div className="w-[180px] sm:w-[240px] md:w-[300px] overflow-hidden">
-            <RippleLogo />
+          <div className="aspect-[2/1] w-full max-w-[300px] overflow-hidden">
+             <RippleLogo />
           </div>
         </div>
 
