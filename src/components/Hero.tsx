@@ -34,13 +34,13 @@ export function Hero() {
         </h2>
 
         {/* Description */}
-        <p className="max-w-2xl mx-auto text-white/70 mb-6">
+        <p className="max-w-2xl mx-auto text-white/70">
           A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
           and creating compelling visual stories through design and art.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 sm:mt-8 md:mt-10 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-10 mb-12">
           <Button onClick={scrollToProjects}>View My Work</Button>
           <Button variant="outline" asChild>
             <a href="#contact">Get in Touch</a>
