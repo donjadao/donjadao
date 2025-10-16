@@ -47,7 +47,7 @@ const projects = [
     id: 4,
     title: 'College Student Cook Book',
     description: 'Modern banking experience with focus on accessibility and security features.',
-    image: 'cookbookpic',
+    image: cookbookpic,
     tags: ['UX Research', 'Omeka', 'Digital Collection'],
     category: 'web',
     link: 'https://donjadao.oucreate.com',
