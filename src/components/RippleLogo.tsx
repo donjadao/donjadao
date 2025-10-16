@@ -29,13 +29,12 @@ export default function RippleLogo() {
         app.renderer.resize(offsetWidth, offsetHeight);
       }
 
-      import rippleTexturePath from '../assets/waterrippletexture.png';
-
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
           Assets.load(logoPath),
-          Assets.load(rippleMapUrl),
+          Assets.load(rippleTexturePath),
         ]);
+
 
         const logo = new Sprite(logoTexture);
         logo.anchor.set(0.5);
