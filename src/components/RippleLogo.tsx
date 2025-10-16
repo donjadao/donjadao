@@ -1,5 +1,3 @@
-//RippleLogo***********************************************
-
 import { useEffect, useRef } from 'react';
 import {
   Application,
@@ -7,7 +5,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png'; // ✅ Your logo
+import logoPath from '..assets/7ce734f2c2e6165613eedbecbb47049bc56bbf5f.png';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,20 +14,20 @@ export default function RippleLogo() {
     const setup = async () => {
       const app = new Application();
       await app.init({
-        width: 800,
-        height: 400,
-        backgroundColor: 0x2a2d45, // ✅ Custom background
+        backgroundColor: 0x2a2d45,
         resolution: window.devicePixelRatio || 1,
         antialias: true,
       });
 
       if (containerRef.current) {
-         const { offsetWidth, offsetHeight } = containerRef.current;
-         app.renderer.resize(offsetWidth, offsetHeight);
+        containerRef.current.innerHTML = '';
+        containerRef.current.appendChild(app.canvas);
+
+        const { offsetWidth, offsetHeight } = containerRef.current;
+        app.renderer.resize(offsetWidth, offsetHeight);
       }
 
-
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
+      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png';
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -40,22 +38,18 @@ export default function RippleLogo() {
         const logo = new Sprite(logoTexture);
         logo.anchor.set(0.5);
 
-        // Scale first
-        const maxWidth = 800;
-        const maxHeight = 400;
+        // Scale logo to fit container
+        const padding = 40;
         const scaleFactor = Math.min(
-           (maxWidth - 40) / logo.width,
-           (maxHeight - 40) / logo.height
+          (app.screen.width - padding) / logo.width,
+          (app.screen.height - padding) / logo.height
         );
         logo.scale.set(scaleFactor);
 
-        // Then center it
+        // Center logo after scaling
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
-
-        // ✅ Make sure it's visible and added to stage
         logo.visible = true;
-        app.stage.addChild(logo);
 
         const ripple = new Sprite(rippleTexture);
         ripple.anchor.set(0.5);
@@ -65,11 +59,10 @@ export default function RippleLogo() {
         ripple.visible = false;
 
         const filter = new DisplacementFilter({
-           sprite: ripple,
-           scale: 300,
-           padding: 100,
+          sprite: ripple,
+          scale: 300,
+          padding: 100,
         });
-
 
         app.stage.addChild(ripple);
         app.stage.addChild(logo);
@@ -83,12 +76,12 @@ export default function RippleLogo() {
 
         app.stage.on('pointerover', () => {
           isHovering = true;
-          logo.filters = [filter]; // ✅ Apply ripple
+          logo.filters = [filter];
         });
 
         app.stage.on('pointerout', () => {
           isHovering = false;
-          logo.filters = []; // ✅ Remove ripple
+          logo.filters = [];
         });
 
         app.stage.on('pointermove', (event) => {
@@ -112,6 +105,18 @@ export default function RippleLogo() {
             ripple.rotation += 0.01;
           }
         });
+
+        // Optional: handle window resize
+        window.addEventListener('resize', () => {
+          if (containerRef.current) {
+            const { offsetWidth, offsetHeight } = containerRef.current;
+            app.renderer.resize(offsetWidth, offsetHeight);
+            logo.x = app.screen.width / 2;
+            logo.y = app.screen.height / 2;
+            ripple.x = app.screen.width / 2;
+            ripple.y = app.screen.height / 2;
+          }
+        });
       } catch (err) {
         console.error('Failed to load assets:', err);
       }
@@ -120,7 +125,7 @@ export default function RippleLogo() {
     setup();
 
     return () => {
-      // Optional cleanup
+      // Cleanup if needed
     };
   }, []);
 
