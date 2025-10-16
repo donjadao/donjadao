@@ -7,7 +7,7 @@ import {
   Assets,
   DisplacementFilter,
 } from 'pixi.js';
-import logoPath from '../assets/donsnamelogo.png';
+import logoPath from '../assets/donsnamelogo2.png';
 import rippleTexturePath from '../assets/watertexture2.png';
 
 export default function RippleLogo() {
