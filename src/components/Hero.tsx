@@ -15,7 +15,7 @@ export function Hero() {
     >
       <div className="max-w-4xl w-full mx-auto">
         {/* Ripple Logo */}
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center -mb-8">
           <div className="aspect-[2/1] w-full max-w-[300px] overflow-hidden">
              <RippleLogo />
           </div>
@@ -40,7 +40,7 @@ export function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-12">
           <Button onClick={scrollToProjects}>View My Work</Button>
           <Button variant="outline" asChild>
             <a href="#contact">Get in Touch</a>
