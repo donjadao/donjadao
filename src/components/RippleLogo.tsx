@@ -9,5 +9,5 @@ rippleRef.current = ripple;
 app.stage.addChild(ripple);
 
 // Dynamically load ripple effect logic
-const { setupRipple } = await import('./rippleEffect');
+const { setupRipple } = await import('./rippleEffects');
 setupRipple(ripple, logo, app);
