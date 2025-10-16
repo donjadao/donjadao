@@ -15,7 +15,7 @@ export function Hero() {
     >
       <div className="max-w-4xl w-full mx-auto">
         {/* Ripple Logo */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-4">
           <div className="aspect-[2/1] w-full max-w-[300px] overflow-hidden">
              <RippleLogo />
           </div>
@@ -23,8 +23,8 @@ export function Hero() {
 
         {/* Heading */}
         <h1 className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          <span className="mr-2">Hi, I'm</span>
-          <span className="text-primary">Don Dao</span>
+          <span className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Hi, I'm</span>
+          <span className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-primary">Don Dao</span>
         </h1>
 
         {/* Subheading */}
@@ -33,7 +33,7 @@ export function Hero() {
         </h2>
 
         {/* Description */}
-        <p className="max-w-2xl mx-auto text-white/70 text-base sm:text-lg md:text-xl mb-6 sm:mb-8 md:mb-10">
+        <p className="max-w-2xl mx-auto text-white/70 text-base sm:text-lg md:text-xl mb-10 sm:mb-10 md:mb-12">
           A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
           and creating compelling visual stories through design and art.
         </p>
