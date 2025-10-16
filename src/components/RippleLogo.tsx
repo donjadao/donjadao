@@ -8,7 +8,7 @@ import {
   DisplacementFilter,
 } from 'pixi.js';
 import logoPath from '../assets/donsnamelogo.png';
-import rippleTexturePath from '../assets/waterrippletexture.png';
+import rippleTexturePath from '../assets/watertexture2.png';
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
