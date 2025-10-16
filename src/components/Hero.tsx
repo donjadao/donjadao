@@ -40,7 +40,7 @@ export function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mt-8 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-12">
           <Button onClick={scrollToProjects}>View My Work</Button>
           <Button variant="outline" asChild>
             <a href="#contact">Get in Touch</a>
