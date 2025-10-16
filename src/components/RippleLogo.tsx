@@ -58,8 +58,12 @@ export default function RippleLogo() {
         ripple.scale.set(3);
         ripple.visible = false;
 
-        const filter = new DisplacementFilter(ripple, 300);
-        filter.padding = 100;
+        const filter = new DisplacementFilter({
+           sprite: ripple,
+           scale: 300,
+           padding: 100,
+        });
+
 
         app.stage.addChild(ripple);
         app.stage.addChild(logo);
