@@ -8,7 +8,6 @@ import {
 import logoPath from '../assets/donsnamelogo.png';
 import rippleTexturePath from '../assets/waterrippletexture.png';
 
-
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -21,106 +20,101 @@ export default function RippleLogo() {
         antialias: true,
       });
 
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(app.canvas);
+      if (!containerRef.current) return;
+      containerRef.current.innerHTML = '';
+      containerRef.current.appendChild(app.canvas);
 
-        const { offsetWidth, offsetHeight } = containerRef.current;
+      const resizeCanvas = () => {
+        const { offsetWidth, offsetHeight } = containerRef.current!;
         app.renderer.resize(offsetWidth, offsetHeight);
-      }
+        app.canvas.style.width = '100%';
+        app.canvas.style.height = '100%';
+      };
 
-      try {
-        const [logoTexture, rippleTexture] = await Promise.all([
-          Assets.load(logoPath),
-          Assets.load(rippleTexturePath),
-        ]);
+      resizeCanvas();
 
+      const [logoTexture, rippleTexture] = await Promise.all([
+        Assets.load(logoPath),
+        Assets.load(rippleTexturePath),
+      ]);
 
-        const logo = new Sprite(logoTexture);
-        logo.anchor.set(0.5);
+      const logo = new Sprite(logoTexture);
+      logo.anchor.set(0.5);
 
-        // Scale logo to fit container
+      const ripple = new Sprite(rippleTexture);
+      ripple.anchor.set(0.5);
+      ripple.scale.set(1.5); // Reduced scale to prevent cutoff
+      ripple.visible = false;
+
+      const filter = new DisplacementFilter({
+        sprite: ripple,
+        scale: 300,
+        padding: 300, // Increased padding
+      });
+
+      app.stage.addChild(ripple);
+      app.stage.addChild(logo);
+
+      const positionElements = () => {
         const padding = 40;
         const scaleFactor = Math.min(
-          (app.screen.width - padding) / logo.width,
-          (app.screen.height - padding) / logo.height
+          (app.screen.width - padding) / logo.texture.width,
+          (app.screen.height - padding) / logo.texture.height
         );
         logo.scale.set(scaleFactor);
-
-        // Center logo after scaling
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
-        logo.visible = true;
-
-        const ripple = new Sprite(rippleTexture);
-        ripple.anchor.set(0.5);
         ripple.x = app.screen.width / 2;
         ripple.y = app.screen.height / 2;
-        ripple.scale.set(2);
-        ripple.visible = false;
+      };
 
-        const filter = new DisplacementFilter({
-          sprite: ripple,
-          scale: 300,
-          padding: 100,
-        });
+      positionElements();
 
-        app.stage.addChild(ripple);
-        app.stage.addChild(logo);
+      let targetX = ripple.x;
+      let targetY = ripple.y;
+      let isHovering = false;
 
-        let targetX = ripple.x;
-        let targetY = ripple.y;
-        let isHovering = false;
+      app.stage.eventMode = 'static';
+      app.stage.hitArea = app.screen;
 
-        app.stage.eventMode = 'static';
-        app.stage.hitArea = app.screen;
+      app.stage.on('pointerover', () => {
+        isHovering = true;
+        logo.filters = [filter];
+      });
 
-        app.stage.on('pointerover', () => {
-          isHovering = true;
-          logo.filters = [filter];
-        });
+      app.stage.on('pointerout', () => {
+        isHovering = false;
+        logo.filters = [];
+      });
 
-        app.stage.on('pointerout', () => {
-          isHovering = false;
-          logo.filters = [];
-        });
+      app.stage.on('pointermove', (event) => {
+        if (isHovering) {
+          const pos = event.global;
+          targetX = pos.x;
+          targetY = pos.y;
+        }
+      });
 
-        app.stage.on('pointermove', (event) => {
-          if (isHovering) {
-            const pos = event.global;
-            targetX = pos.x;
-            targetY = pos.y;
-          }
-        });
+      app.ticker.add(() => {
+        const ease = 0.1;
+        const target = isHovering
+          ? { x: targetX, y: targetY }
+          : { x: app.screen.width / 2, y: app.screen.height / 2 };
 
-        app.ticker.add(() => {
-          const ease = 0.1;
-          const target = isHovering
-            ? { x: targetX, y: targetY }
-            : { x: app.screen.width / 2, y: app.screen.height / 2 };
+        ripple.x += (target.x - ripple.x) * ease;
+        ripple.y += (target.y - ripple.y) * ease;
 
-          ripple.x += (target.x - ripple.x) * ease;
-          ripple.y += (target.y - ripple.y) * ease;
+        if (isHovering) {
+          ripple.rotation += 0.01;
+        }
+      });
 
-          if (isHovering) {
-            ripple.rotation += 0.01;
-          }
-        });
+      const observer = new ResizeObserver(() => {
+        resizeCanvas();
+        positionElements();
+      });
 
-        // Optional: handle window resize
-        window.addEventListener('resize', () => {
-          if (containerRef.current) {
-            const { offsetWidth, offsetHeight } = containerRef.current;
-            app.renderer.resize(offsetWidth, offsetHeight);
-            logo.x = app.screen.width / 2;
-            logo.y = app.screen.height / 2;
-            ripple.x = app.screen.width / 2;
-            ripple.y = app.screen.height / 2;
-          }
-        });
-      } catch (err) {
-        console.error('Failed to load assets:', err);
-      }
+      observer.observe(containerRef.current);
     };
 
     setup();
@@ -135,12 +129,12 @@ export default function RippleLogo() {
       ref={containerRef}
       style={{
         width: '100%',
-        height: '100%',
+        height: '100vh',
         maxWidth: '800px',
-        maxHeight: '400px',
         margin: '0 auto',
         position: 'relative',
         overflow: 'hidden',
+        pointerEvents: 'auto',
         zIndex: 1,
       }}
     />
