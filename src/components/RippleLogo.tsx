@@ -24,9 +24,10 @@ export default function RippleLogo() {
       });
 
       if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(app.canvas);
+         const { offsetWidth, offsetHeight } = containerRef.current;
+         app.renderer.resize(offsetWidth, offsetHeight);
       }
+
 
       const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png'; // ✅ Verified ripple map
 
@@ -117,8 +118,10 @@ export default function RippleLogo() {
     <div
       ref={containerRef}
       style={{
-        width: '800px',
-        height: '400px',
+        width: '100%',
+        height: '100%',
+        maxWidth: '800px',
+        maxHeight: '400px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 1,
