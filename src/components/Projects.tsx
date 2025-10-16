@@ -7,6 +7,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
+import cookbookpic from '../assets/College Cookbook.png';
 
 
 
@@ -46,7 +47,7 @@ const projects = [
     id: 4,
     title: 'College Student Cook Book',
     description: 'Modern banking experience with focus on accessibility and security features.',
-    image: 'src/assets/College Cookbook.png',
+    image: 'cookbookpic',
     tags: ['UX Research', 'Omeka', 'Digital Collection'],
     category: 'web',
     link: 'https://donjadao.oucreate.com',
