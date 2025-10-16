@@ -131,7 +131,7 @@ export default function RippleLogo() {
       ref={containerRef}
       style={{
         width: '100%',
-        height: '80vh',
+        height: '60vh',
         maxWidth: '800px',
         margin: '0 auto',
         position: 'relative',
