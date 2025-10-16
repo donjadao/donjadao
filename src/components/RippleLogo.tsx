@@ -39,17 +39,23 @@ export default function RippleLogo() {
 
         const logo = new Sprite(logoTexture);
         logo.anchor.set(0.5);
-        logo.x = app.screen.width / 2;
-        logo.y = app.screen.height / 2;
 
-        // ✅ Dynamically scale logo to fit within 900×600
+        // Scale first
         const maxWidth = 800;
         const maxHeight = 400;
         const scaleFactor = Math.min(
-          (maxWidth - 40) / logo.width,
-          (maxHeight - 40) / logo.height
+           (maxWidth - 40) / logo.width,
+           (maxHeight - 40) / logo.height
         );
         logo.scale.set(scaleFactor);
+
+        // Then center it
+        logo.x = app.screen.width / 2;
+        logo.y = app.screen.height / 2;
+
+        // ✅ Make sure it's visible and added to stage
+        logo.visible = true;
+        app.stage.addChild(logo);
 
         const ripple = new Sprite(rippleTexture);
         ripple.anchor.set(0.5);
