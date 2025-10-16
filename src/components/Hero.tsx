@@ -22,10 +22,11 @@ export function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          <span className="mb-4 text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Hi, I'm</span>
-          <span className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-primary">Don Dao</span>
+        <h1 className="text-white font-semibold text-base sm:text-lg md:text-xl mb-2">
+          <span className="mr-2">Hi, I'm</span>
+          <span className="text-primary">Don Dao</span>
         </h1>
+
 
         {/* Subheading */}
         <h2 className="text-white font-semibold text-base sm:text-lg md:text-xl mb-2">
@@ -33,13 +34,13 @@ export function Hero() {
         </h2>
 
         {/* Description */}
-        <p className="max-w-2xl mx-auto text-white/70 text-base sm:text-lg md:text-xl mb-10 sm:mb-10 md:mb-12">
+        <p className="max-w-2xl mx-auto text-white/70">
           A passionate UI/UX Designer & Visual Artist crafting beautiful, intuitive digital experiences 
           and creating compelling visual stories through design and art.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mt-6 mb-12">
           <Button onClick={scrollToProjects}>View My Work</Button>
           <Button variant="outline" asChild>
             <a href="#contact">Get in Touch</a>
