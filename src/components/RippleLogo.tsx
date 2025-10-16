@@ -1,10 +1,11 @@
+//ripplelogov1
+
 import { useEffect, useRef } from 'react';
 import {
   Application,
   Sprite,
   Assets,
   DisplacementFilter,
-  Container,
 } from 'pixi.js';
 import logoPath from '../assets/donsnamelogo.png';
 import rippleTexturePath from '../assets/waterrippletexture.png';
@@ -42,17 +43,19 @@ export default function RippleLogo() {
       const logo = new Sprite(logoTexture);
       logo.anchor.set(0.5);
 
-      const rippleContainer = new Container();
-      app.stage.addChild(rippleContainer);
-      app.stage.addChild(logo);
+      const ripple = new Sprite(rippleTexture);
+      ripple.anchor.set(0.5);
+      ripple.scale.set(1.5); // Reduced scale to prevent cutoff
+      ripple.visible = false;
 
       const filter = new DisplacementFilter({
-        sprite: rippleContainer,
-        scale: 100,
-        padding: 300,
+        sprite: ripple,
+        scale: 300,
+        padding: 300, // Increased padding
       });
 
-      logo.filters = [filter];
+      app.stage.addChild(ripple);
+      app.stage.addChild(logo);
 
       const positionElements = () => {
         const padding = 40;
@@ -63,47 +66,57 @@ export default function RippleLogo() {
         logo.scale.set(scaleFactor);
         logo.x = app.screen.width / 2;
         logo.y = app.screen.height / 2;
+        ripple.x = app.screen.width / 2;
+        ripple.y = app.screen.height / 2;
       };
 
       positionElements();
+
+      let targetX = ripple.x;
+      let targetY = ripple.y;
+      let isHovering = false;
+
+      app.stage.eventMode = 'static';
+      app.stage.hitArea = app.screen;
+
+      app.stage.on('pointerover', () => {
+        isHovering = true;
+        logo.filters = [filter];
+      });
+
+      app.stage.on('pointerout', () => {
+        isHovering = false;
+        logo.filters = [];
+      });
+
+      app.stage.on('pointermove', (event) => {
+        if (isHovering) {
+          const pos = event.global;
+          targetX = pos.x;
+          targetY = pos.y;
+        }
+      });
+
+      app.ticker.add(() => {
+        const ease = 0.1;
+        const target = isHovering
+          ? { x: targetX, y: targetY }
+          : { x: app.screen.width / 2, y: app.screen.height / 2 };
+
+        ripple.x += (target.x - ripple.x) * ease;
+        ripple.y += (target.y - ripple.y) * ease;
+
+        if (isHovering) {
+          ripple.rotation += 0.01;
+        }
+      });
 
       const observer = new ResizeObserver(() => {
         resizeCanvas();
         positionElements();
       });
+
       observer.observe(containerRef.current);
-
-      // Ripple logic
-      const ripples: Sprite[] = [];
-
-      app.stage.eventMode = 'static';
-      app.stage.hitArea = app.screen;
-
-      app.stage.on('pointerdown', (event) => {
-        const pos = event.global;
-        const ripple = new Sprite(rippleTexture);
-        ripple.anchor.set(0.5);
-        ripple.x = pos.x;
-        ripple.y = pos.y;
-        ripple.scale.set(0.5);
-        ripple.alpha = 1;
-        rippleContainer.addChild(ripple);
-        ripples.push(ripple);
-      });
-
-      app.ticker.add(() => {
-        for (let i = ripples.length - 1; i >= 0; i--) {
-          const ripple = ripples[i];
-          ripple.scale.x += 0.05;
-          ripple.scale.y += 0.05;
-          ripple.alpha -= 0.02;
-
-          if (ripple.alpha <= 0) {
-            rippleContainer.removeChild(ripple);
-            ripples.splice(i, 1);
-          }
-        }
-      });
     };
 
     setup();
