@@ -6,6 +6,8 @@ import {
   DisplacementFilter,
 } from 'pixi.js';
 import logoPath from '../assets/donsnamelogo.png';
+import rippleTexturePath from '../assets/waterrippletexture.png';
+
 
 export default function RippleLogo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,7 +29,7 @@ export default function RippleLogo() {
         app.renderer.resize(offsetWidth, offsetHeight);
       }
 
-      const rippleMapUrl = 'https://i.imgur.com/2yYayZk.png';
+      import rippleTexturePath from '../assets/waterrippletexture.png';
 
       try {
         const [logoTexture, rippleTexture] = await Promise.all([
@@ -55,7 +57,7 @@ export default function RippleLogo() {
         ripple.anchor.set(0.5);
         ripple.x = app.screen.width / 2;
         ripple.y = app.screen.height / 2;
-        ripple.scale.set(3);
+        ripple.scale.set(2);
         ripple.visible = false;
 
         const filter = new DisplacementFilter({
@@ -139,6 +141,7 @@ export default function RippleLogo() {
         maxHeight: '400px',
         margin: '0 auto',
         position: 'relative',
+        overflow: 'hidden',
         zIndex: 1,
       }}
     />
