@@ -6,9 +6,6 @@ import logo from '../assets/donsnamelogo.png';
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
