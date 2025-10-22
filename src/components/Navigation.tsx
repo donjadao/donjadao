@@ -10,7 +10,7 @@ export function Navigation() {
     { name: 'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Leadership', href: '#leadership' },
+   // { name: 'Leadership', href: '#leadership' },
     { name: 'Contact', href: '#contact' },
   ];
 
