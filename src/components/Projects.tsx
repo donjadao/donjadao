@@ -4,12 +4,11 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import type { Project } from './ProjectDetail';
 
 import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
-
-
 
 
 const projects = [
@@ -54,7 +53,11 @@ const projects = [
   },
 ];
 
-export function Projects() {
+interface ProjectsProps {
+  onProjectClick?: (project: Project) => void;
+}
+
+export function Projects({ onProjectClick }: ProjectsProps) {
   return (
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -77,7 +80,7 @@ export function Projects() {
           <TabsContent value="all">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard key={project.id} project={project} onClick={onProjectClick} />
               ))}
             </div>
           </TabsContent>
@@ -87,7 +90,7 @@ export function Projects() {
               {projects
                 .filter((p) => p.category === 'web')
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <ProjectCard key={project.id} project={project} onClick={onProjectClick} />
                 ))}
             </div>
           </TabsContent>
@@ -97,7 +100,7 @@ export function Projects() {
               {projects
                 .filter((p) => p.category === 'mobile')
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <ProjectCard key={project.id} project={project} onClick={onProjectClick} />
                 ))}
             </div>
           </TabsContent>
@@ -107,7 +110,7 @@ export function Projects() {
               {projects
                 .filter((p) => p.category === 'other')
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <ProjectCard key={project.id} project={project} onClick={onProjectClick} />
                 ))}
             </div>
           </TabsContent>
@@ -117,10 +120,18 @@ export function Projects() {
   );
 }
 
-function ProjectCard({ project }: { project: typeof projects[0] }) {
+interface ProjectCardProps {
+  project: Project;
+  onClick?: (project: Project) => void;
+}
+
+function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
-      <div className="relative overflow-hidden aspect-video">
+      <div 
+        className="relative overflow-hidden aspect-video cursor-pointer"
+        onClick={() => onClick?.(project)}
+      >
         <ImageWithFallback
           src={project.image}
           alt={project.title}
@@ -128,7 +139,12 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         />
       </div>
       <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
+        <CardTitle 
+          className="cursor-pointer hover:text-primary transition-colors"
+          onClick={() => onClick?.(project)}
+        >
+          {project.title}
+        </CardTitle>
         <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -141,11 +157,12 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         </div>
       </CardContent>
       <CardFooter className="gap-2">
-        <Button variant="outline" size="sm" asChild>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="mr-2 h-4 w-4" />
-            View
-          </a>
+        <Button 
+          variant="outline" 
+          size="sm"
+          onClick={() => onClick?.(project)}
+        >
+          View Details
         </Button>
         {project.github && (
           <Button variant="outline" size="sm" asChild>
