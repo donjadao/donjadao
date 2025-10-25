@@ -71,7 +71,7 @@ const leadershipRoles = [
     organization: 'Asian Americans in Creative Spaces',
     role: 'Mentor',
     type: 'Club',
-    period: '2023 - Present',
+    period: '2025 - Present',
     description: 'Serving as a mentor for underclassmen students to help them find the tools and confidence to be successful!',
     icon: Award,
     color: '#e8a5ad',
