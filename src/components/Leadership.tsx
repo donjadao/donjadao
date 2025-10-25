@@ -3,6 +3,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
+import FSA from './src/assets/FSA.png';
+import SASE from './src/assets/SASE.png';
+import AACS from './src/assets/AACS.png';
+import KSA from './src/assets/KSA.png';
+import TNTT from './src/assets/TNTT.png';
+import UX from './src/assets/UX.png';
+
 const leadershipRoles = [
   {
     id: 1,
@@ -13,7 +20,7 @@ const leadershipRoles = [
     description: 'Founded and led a student organization in 2023, designing branding, managing communications, and creating UX-informed leadership workshops.',
     icon: Heart,
     color: '#d03674',
-    image: 'https://images.unsplash.com/photo-1759922378187-11a435837df8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZW50b3JzaGlwJTIwbWVldGluZ3xlbnwxfHx8fDE3NjEzNzkyMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: UX,
   },
   {
     id: 2,
@@ -24,7 +31,7 @@ const leadershipRoles = [
     description: 'Led a team of 50+ members, organized workshops, design challenges, and community events to foster creativity and collaboration.',
     icon: Users,
     color: '#7484bc',
-    image: 'https://images.unsplash.com/photo-1753546466496-d2d8a819f61a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwY2x1YiUyMG1lZXRpbmd8ZW58MXx8fHwxNzYxMjc0MjEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: SASE,
   },
   {
     id: 3,
@@ -35,7 +42,7 @@ const leadershipRoles = [
     description: 'Led youth programming and weekly scheudles, organizing values-based events, designing creative projects, and developing engaging lessons and activities.',
     icon: Award,
     color: '#6c6cac',
-    image: 'https://images.unsplash.com/photo-1758599668360-48ba8ba71b47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXIlMjBjb21tdW5pdHklMjB3b3JrfGVufDF8fHx8MTc2MTI5MDkxNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: TNTT,
   },
   {
     id: 4,
@@ -46,7 +53,7 @@ const leadershipRoles = [
     description: 'Founded a Filipino cultural organization that promoted unity through media outreach, event coordination, marketing design, and photo documentation.',
     icon: Heart,
     color: '#e8a5ad',
-    image: 'https://images.unsplash.com/photo-1573497161249-42447f9f6706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHRlY2glMjBjb25mZXJlbmNlfGVufDF8fHx8MTc2MTM3OTIxNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: FSA,
   },
   {
     id: 5,
@@ -57,18 +64,18 @@ const leadershipRoles = [
     description: 'Serve as Graphic Designer and Intern Coordinator for the Korean Student Association, leading cultural event planning, designing visual assets and merchandise, and mentoring interns to sustain future leadership.',
     icon: Users,
     color: '#e8a5ad',
-    image: 'https://images.unsplash.com/photo-1573497161249-42447f9f6706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHRlY2glMjBjb25mZXJlbmNlfGVufDF8fHx8MTc2MTM3OTIxNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: KSA,
   },
   {
     id: 6,
-    organization: 'Artificial Inteligence and Machine Learning Club',
-    role: 'Marketing Officer',
+    organization: 'Asian Americans in Creative Spaces',
+    role: 'Mentor',
     type: 'Club',
     period: '2023 - Present',
-    description: 'Serve as Marketing Officer for the AI & Machine Learning Club, creating promotional materials and leading graphic and merchandise design.',
+    description: 'Serving as a mentor for underclassmen students to help them find the tools and confidence to be successful!',
     icon: Award,
     color: '#e8a5ad',
-    image: 'https://images.unsplash.com/photo-1573497161249-42447f9f6706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHRlY2glMjBjb25mZXJlbmNlfGVufDF8fHx8MTc2MTM3OTIxNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: AACS',
   },
 ];
 
