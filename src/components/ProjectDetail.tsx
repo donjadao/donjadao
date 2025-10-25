@@ -57,7 +57,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
       {/* Project Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-8">
-          <h1 className="mt-0 mb-6 text-white">{project.title}</h1>
+          <h1 className="mt-6 mb-6 text-white">{project.title}</h1>
           <p className="text-xl text-white/70 mb-8">{project.description}</p>
           
           {/* Tags */}
@@ -139,24 +139,25 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
         </div>
 
         {/* Project Details */}
-        <div className="space-y-12">
-          {/* Overview */}
-          <div>
-            <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
-          </div>
+        <div className="space-y-16">
+      {/* Overview */}
+      <div className="mt-16">
+        <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
+        <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
+      </div>
 
-          {/* Challenge */}
-          <div>
-            <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
-          </div>
+      {/* Challenge */}
+      <div className="mt-16">
+        <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
+        <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
+      </div>
 
-          {/* Solution */}
-          <div>
-            <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
-          </div>
+      {/* Solution */}
+      <div className="mt-16">
+        <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
+        <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
+      </div>
+
 
           {/* Additional Images */}
           {additionalImages.length > 0 && (
