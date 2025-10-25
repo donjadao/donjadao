@@ -139,21 +139,21 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
         </div>
 
         {/* Project Details */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           {/* Overview */}
-          <div className="mt-12">
+          <div className="mt-8">
             <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
             <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
           </div>
 
           {/* Challenge */}
-          <div className="mt-12">
+          <div className="mt-8">
             <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
             <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
           </div>
 
           {/* Solution */}
-          <div className="mt-12">
+          <div className="mt-8">
             <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
             <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
           </div>
@@ -174,7 +174,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
           )}
 
           {/* Impact */}
-          <div>
+          <div className="mt-8">
             <h2 className="mb-3 text-white" style={{ color: '#d03674' }}>Impact & Results</h2>
             <p className="text-white/70 text-lg leading-relaxed">{impact}</p>
           </div>
