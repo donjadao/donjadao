@@ -3,12 +3,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-import FSA from './src/assets/FSA.png';
-import SASE from './src/assets/SASE.png';
-import AACS from './src/assets/AACS.png';
-import KSA from './src/assets/KSA.png';
-import TNTT from './src/assets/TNTT.png';
-import UX from './src/assets/UX.png';
+import FSA from '../assets/FSA.png';
+import SASE from '../assets/SASE.png';
+import AACS from '../assets/AACS.png';
+import KSA from '../assets/KSA.png';
+import TNTT from '../assets/TNTT.png';
+import UX from '../assets/UX.png';
 
 const leadershipRoles = [
   {
