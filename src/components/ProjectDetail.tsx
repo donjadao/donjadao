@@ -57,11 +57,11 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
       {/* Project Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-8">
-          <h1 className="mb-4 text-white">{project.title}</h1>
-          <p className="text-xl text-white/70 mb-6">{project.description}</p>
+          <h1 className="mt-0 mb-6 text-white">{project.title}</h1>
+          <p className="text-xl text-white/70 mb-8">{project.description}</p>
           
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-8">
             {project.tags.map((tag) => (
               <Badge key={tag} variant="secondary" style={{ backgroundColor: '#7484bc30', color: '#7484bc' }}>
                 {tag}
@@ -89,7 +89,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
             )}
           </div>
         </div>
-        
+
         {/* Hero Image */}
         <div className="relative overflow-hidden rounded-lg mb-12">
           <ImageWithFallback
@@ -139,21 +139,21 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
         </div>
 
         {/* Project Details */}
-          <div className="space-y-6">
+        <div className="space-y-12">
           {/* Overview */}
-          <div className="mt-12">
+          <div>
             <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
             <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
           </div>
 
           {/* Challenge */}
-          <div className="mt-12">
+          <div>
             <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
             <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
           </div>
 
           {/* Solution */}
-          <div className="mt-12">
+          <div>
             <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
             <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
           </div>
@@ -174,7 +174,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
           )}
 
           {/* Impact */}
-          <div className="mt-12">
+          <div>
             <h2 className="mb-3 text-white" style={{ color: '#d03674' }}>Impact & Results</h2>
             <p className="text-white/70 text-lg leading-relaxed">{impact}</p>
           </div>
