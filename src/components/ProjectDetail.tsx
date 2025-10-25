@@ -55,32 +55,24 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
       </div>
 
       {/* Project Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-6">{project.title}</h1>
+          <h1 className="mb-4 text-white">{project.title}</h1>
           <p className="text-xl text-white/70 mb-6">{project.description}</p>
-
+          
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {project.tags.map((tag) => (
-                <Badge
-                key={tag}
-                variant="secondary"
-                style={{ backgroundColor: '#7484bc30', color: '#7484bc' }}
-              >
+              <Badge key={tag} variant="secondary" style={{ backgroundColor: '#7484bc30', color: '#7484bc' }}>
                 {tag}
               </Badge>
             ))}
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 mb-6">
+          <div className="flex gap-3">
             {project.link && (
-              <Button
-                asChild
-                style={{ backgroundColor: '#d03674' }}
-                className="hover:opacity-90"
-              >
+              <Button asChild style={{ backgroundColor: '#d03674' }} className="hover:opacity-90">
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   View Live Project
@@ -88,11 +80,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
               </Button>
             )}
             {project.github && project.github !== '#' && (
-              <Button
-                variant="outline"
-                asChild
-                className="border-white/20 text-white hover:bg-white/10"
-              >
+              <Button variant="outline" asChild className="border-white/20 text-white hover:bg-white/10">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
                   View Code
@@ -101,8 +89,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
             )}
           </div>
         </div>
-      </div>
-
+        
         {/* Hero Image */}
         <div className="relative overflow-hidden rounded-lg mb-12">
           <ImageWithFallback
