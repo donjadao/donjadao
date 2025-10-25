@@ -75,7 +75,7 @@ const leadershipRoles = [
     description: 'Serving as a mentor for underclassmen students to help them find the tools and confidence to be successful!',
     icon: Award,
     color: '#e8a5ad',
-    image: AACS',
+    image: AACS,
   },
 ];
 
