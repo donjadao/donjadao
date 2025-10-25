@@ -3,6 +3,8 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Card, CardContent } from './ui/card';
+import { useEffect } from 'react';
+
 
 export type Project = {
   id: number;
@@ -30,7 +32,8 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   // Use project data or fallback to defaults
   const role = project.role || 'Designer';
   const timeline = project.timeline || 'Not specified';
