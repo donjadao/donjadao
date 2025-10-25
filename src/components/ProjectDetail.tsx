@@ -140,29 +140,23 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
 
         {/* Project Details */}
         <div className="space-y-12">
-        {/* Overview */}
-        <div className="mt-12">
-          <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
-          <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
-        </div>
+          {/* Overview */}
+          <div className="mt-12">
+            <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
+            <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
+          </div>
 
-        {/* Challenge */}
-        <div className="mt-12">
-          <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
-          <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
-        </div>
+          {/* Challenge */}
+          <div className="mt-12">
+            <h2 className="mb-3 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
+            <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
+          </div>
 
-        {/* Solution */}
-        <div className="mt-12">
-          <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
-          <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
-        </div>
-
-        {/* Impact */}
-        <div className="mt-12">
-          <h2 className="mb-3 text-white" style={{ color: '#d03674' }}>Impact & Results</h2>
-          <p className="text-white/70 text-lg leading-relaxed">{impact}</p>
-        </div>
+          {/* Solution */}
+          <div className="mt-12">
+            <h2 className="mb-3 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
+            <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
+          </div>
 
           {/* Additional Images */}
           {additionalImages.length > 0 && (
@@ -178,6 +172,13 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
               ))}
             </div>
           )}
+
+          {/* Impact */}
+          <div>
+            <h2 className="mb-3 text-white" style={{ color: '#d03674' }}>Impact & Results</h2>
+            <p className="text-white/70 text-lg leading-relaxed">{impact}</p>
+          </div>
+        </div>
 
         {/* Back to Projects Button */}
         <div className="mt-16 text-center">
