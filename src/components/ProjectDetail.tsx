@@ -1,3 +1,26 @@
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Target } from 'lucide-react';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Card, CardContent } from './ui/card';
+
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  category: string;
+  link?: string;
+  github?: string;
+  // Detailed project information
+  role?: string;
+  timeline?: string;
+  team?: string;
+  challenge?: string;
+  solution?: string;
+  impact?: string;
+  additionalImages?: string[];
 };
 
 interface ProjectDetailProps {
