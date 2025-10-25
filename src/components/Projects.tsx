@@ -53,7 +53,7 @@ const projects = [
   {
     id: 4,
     title: 'College Student Cook Book',
-    description: 'Modern banking experience with focus on accessibility and security features.',
+    description: 'Digital Collection focused on the needs of college students such as cost, ingredients, time, and cookware needed.',
     image: cookbookpic,
     tags: ['UX Research', 'Omeka', 'Digital Collection'],
     category: 'web',
