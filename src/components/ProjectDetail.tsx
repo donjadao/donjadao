@@ -30,7 +30,7 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' }); };
   // Use project data or fallback to defaults
   const role = project.role || 'Designer';
   const timeline = project.timeline || 'Not specified';
