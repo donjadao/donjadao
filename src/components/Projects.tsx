@@ -20,7 +20,7 @@ const projects = [
     tags: ['Information Visualization', 'Data Analysis'],
     category: 'web',
     link: '#',
-    github: '#',
+    //github: '#',
     // ADD THESE FIELDS:
     role: 'Information Designer & Data Analyst',
     timeline: '4 weeks',
@@ -38,7 +38,7 @@ const projects = [
     tags: ['Web UX', 'User Flow', 'Interaction Design'],
     category: 'web',
     link: '#',
-    github: '#',
+    //github: '#',
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const projects = [
     tags: ['Dashboard', 'UX Design', 'Web App', 'UX Research'],
     category: 'web',
     link: '#',
-    github: '#',
+    //github: '#',
   },
   {
     id: 4,
