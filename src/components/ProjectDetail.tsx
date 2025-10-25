@@ -1,18 +1,3 @@
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Target } from 'lucide-react';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Card, CardContent } from './ui/card';
-
-export type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  category: string;
-  link?: string;
-  github?: string;
 };
 
 interface ProjectDetailProps {
@@ -21,16 +6,14 @@ interface ProjectDetailProps {
 }
 
 export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
-  // Extended project details (you can customize these for each project)
-  const projectDetails = {
-    overview: project.description,
-    challenge: 'This section describes the main challenge or problem that needed to be solved. You can customize this for each project to provide detailed context about the user pain points and business requirements.',
-    solution: 'This section explains the design solution and approach taken. Include details about your design process, user research findings, wireframes, prototyping, and how you arrived at the final solution.',
-    impact: 'Highlight the results and impact of your design work. Include metrics like improved conversion rates, user satisfaction scores, reduced task completion time, or other relevant KPIs.',
-    role: 'Lead UI/UX Designer',
-    timeline: '3 months',
-    team: '4 designers, 6 developers',
-  };
+  // Use project data or fallback to defaults
+  const role = project.role || 'Designer';
+  const timeline = project.timeline || 'Not specified';
+  const team = project.team || 'Not specified';
+  const challenge = project.challenge || 'Project challenge details will be added here.';
+  const solution = project.solution || 'Project solution details will be added here.';
+  const impact = project.impact || 'Project impact and results will be added here.';
+  const additionalImages = project.additionalImages || [];
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#2a2d45' }}>
@@ -73,7 +56,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
                 </a>
               </Button>
             )}
-            {project.github && (
+            {project.github && project.github !== '#' && (
               <Button variant="outline" asChild className="border-white/20 text-white hover:bg-white/10">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
@@ -103,7 +86,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
                 </div>
                 <h3 className="text-white">Role</h3>
               </div>
-              <p className="text-white/70">{projectDetails.role}</p>
+              <p className="text-white/70">{role}</p>
             </CardContent>
           </Card>
 
@@ -115,7 +98,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
                 </div>
                 <h3 className="text-white">Timeline</h3>
               </div>
-              <p className="text-white/70">{projectDetails.timeline}</p>
+              <p className="text-white/70">{timeline}</p>
             </CardContent>
           </Card>
 
@@ -127,7 +110,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
                 </div>
                 <h3 className="text-white">Team</h3>
               </div>
-              <p className="text-white/70">{projectDetails.team}</p>
+              <p className="text-white/70">{team}</p>
             </CardContent>
           </Card>
         </div>
@@ -137,43 +120,40 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
           {/* Overview */}
           <div>
             <h2 className="mb-4 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{projectDetails.overview}</p>
+            <p className="text-white/70 text-lg leading-relaxed">{project.description}</p>
           </div>
 
           {/* Challenge */}
           <div>
             <h2 className="mb-4 text-white" style={{ color: '#7484bc' }}>The Challenge</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{projectDetails.challenge}</p>
+            <p className="text-white/70 text-lg leading-relaxed">{challenge}</p>
           </div>
 
           {/* Solution */}
           <div>
             <h2 className="mb-4 text-white" style={{ color: '#6c6cac' }}>The Solution</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{projectDetails.solution}</p>
+            <p className="text-white/70 text-lg leading-relaxed">{solution}</p>
           </div>
 
-          {/* Additional Images Placeholder */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative overflow-hidden rounded-lg">
-              <ImageWithFallback
-                src={project.image}
-                alt={`${project.title} - Detail 1`}
-                className="w-full h-64 object-cover"
-              />
+          {/* Additional Images */}
+          {additionalImages.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {additionalImages.map((img, index) => (
+                <div key={index} className="relative overflow-hidden rounded-lg">
+                  <ImageWithFallback
+                    src={img}
+                    alt={`${project.title} - Detail ${index + 1}`}
+                    className="w-full h-64 object-cover"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="relative overflow-hidden rounded-lg">
-              <ImageWithFallback
-                src={project.image}
-                alt={`${project.title} - Detail 2`}
-                className="w-full h-64 object-cover"
-              />
-            </div>
-          </div>
+          )}
 
           {/* Impact */}
           <div>
             <h2 className="mb-4 text-white" style={{ color: '#d03674' }}>Impact & Results</h2>
-            <p className="text-white/70 text-lg leading-relaxed">{projectDetails.impact}</p>
+            <p className="text-white/70 text-lg leading-relaxed">{impact}</p>
           </div>
         </div>
 
