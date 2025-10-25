@@ -57,7 +57,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
       {/* Project Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-8">
-          <h1 className="mt-6 mb-6 text-white">{project.title}</h1>
+          <h1 className="mt-12 mb-6 text-white">{project.title}</h1>
           <p className="text-xl text-white/70 mb-8">{project.description}</p>
           
           {/* Tags */}
