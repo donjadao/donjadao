@@ -139,7 +139,7 @@ export function ProjectDetail({ project, onBack }: ProjectDetailProps) {
         </div>
 
         {/* Project Details */}
-          <div className="space-y-12">
+          <div className="space-y-6">
           {/* Overview */}
           <div className="mt-12">
             <h2 className="mb-3 text-white" style={{ color: '#e8a5ad' }}>Overview</h2>
