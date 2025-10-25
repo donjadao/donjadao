@@ -13,15 +13,22 @@ import cookbookpic from '../assets/College Cookbook.png';
 
 const projects = [
   {
-    id: 1,
-    title: 'Matcha Votality Chart',
-    description: 'Created an interactive data visualization highlighting sustainability and economic issues in the matcha industry.',
-    image: matchaThumb,
-    tags: ['Information Visualization', 'Data Analysis'],
-    category: 'web',
-    link: 'https://www.behance.net/gallery/236304399/Matcha-Votality-Chart',
-    github: '#',
-  },
+  id: 1,
+  title: 'Matcha Volatility Chart',
+  description: 'Created an interactive data visualization highlighting sustainability and economic issues in the matcha industry.',
+  image: matchaThumb,
+  tags: ['Information Visualization', 'Data Analysis'],
+  category: 'web',
+  link: '#',
+  github: '#',
+    // ADD THESE FIELDS:
+  role: 'Information Designer & Data Analyst',
+  timeline: '4 weeks',
+  team: 'Solo project',
+  challenge: 'The matcha industry faces complex sustainability challenges including price volatility, environmental impact, and supply chain transparency. Most consumers are unaware of these issues, and existing data is scattered across multiple sources making it difficult to understand the full picture.',
+  solution: 'I created an interactive data visualization that synthesizes multiple data sources into a cohesive narrative. The design uses a color coding and visual metaphors help make complex economic data more accessible.',
+  impact: 'The visualization was featured on Behance and shared by sustainability organizations, reaching over 5,000 views in the first month. It successfully raised awareness about matcha industry challenges.',
+  }
   {
     id: 2,
     title: 'Online Book Store',
