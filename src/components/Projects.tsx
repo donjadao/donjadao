@@ -9,6 +9,7 @@ import type { Project } from './ProjectDetail';
 import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
+import Greeklifehub from '..assets/Greeklifehub.png';
 
 
 const projects = [
@@ -32,18 +33,18 @@ const projects = [
   {
     id: 2,
     title: 'Online Book Store',
-    description: 'Intuitive webdesign focused on helping users buy books and be introduced to new ones .',
+    description: 'A web design focused on helping users buy books and be introduced to new ones .',
     image: bookstorePic,
-    tags: ['Web UX', 'User Flow', 'Interaction Design'],
+    tags: ['HTML'],
     category: 'web',
     link: '#',
     //github: '#',
   },
   {
     id: 3,
-    title: 'Greek Life Yelp',
+    title: 'Greek Life Hub',
     description: 'A wire frame for a centralized hub to learn about a universitys Greek life communities.',
-    image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: Greeklifehub,
     tags: ['UX Design', 'Web App', 'Wireframe', 'Information Retrieval'],
     category: 'web',
     link: 'https://lucid.app/lucidchart/655b9f29-7677-4e47-a0fa-56fc91591265/edit?viewport_loc=-4969%2C-2786%2C10230%2C4496%2C0_0&invitationId=inv_c8d5d512-38f9-4c4f-baa9-2f0bdc42b04f',
