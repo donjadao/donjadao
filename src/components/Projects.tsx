@@ -19,7 +19,6 @@ const projects = [
     image: matchaThumb,
     tags: ['Information Visualization', 'Data Analysis'],
     category: 'web',
-    link: '#',
     //github: '#',
     // ADD THESE FIELDS:
     role: 'Information Designer & Data Analyst',
@@ -58,6 +57,29 @@ const projects = [
     tags: ['UX Research', 'Omeka', 'Digital Collection'],
     category: 'web',
     link: 'https://donjadao.oucreate.com',
+  },
+    {
+    id: 5,
+    title: 'Vietnamese Catholic Lunar New Year',
+    description: 'A Wikipedia page covering the differences and importance of how Vietnamese Catholics celebrate Tét',
+    image: cookbookpic,
+    tags: ['Cultual Heritage Data', 'Wikipedia'],
+    category: 'web',
+    link: 'https://en.wikipedia.org/wiki/Vietnamese_Catholic_Lunar_New_Year',
+    role: 'Creator and Author',
+    timeline: '2 weeks',
+    team: 'Solo project',
+    challenge: 'Information about how Vietnamese Catholics celebrate Tết was scattered, inconsistent, and largely undocumented online, especially in English‑language spaces which are dominated by the global‑north perspective. This lack of representation made it difficult for readers in the diaspora communities to understand how Vietnamese Catholic traditions blend pre‑colonial customs with Catholic liturgy. The absence of a centralized, well‑cited resource reflected a broader archival gap between global north documentation practices and global south cultural knowledge where minority religious practices are often overlooked or flattened.',
+    solution: 'Created a new Wikipedia article that documents Vietnamese Catholic Lunar New Year traditions through a cultural heritage lens. This involved: Conducting research across academic, historical, and community sources; Synthesizing information on liturgy, rituals, and cultural adaptations; Highlighting differences between Catholic and non‑Catholic Tết practices; Writing neutral, verifiable content aligned with Wikipedia standards; Adding cross‑links and categories to connect the topic to broader Asian diaspora and religious studies pages.',
+    impact: 'Published the first dedicated Wikipedia page on Vietnamese Catholic Tết which fills a major gap in online cultural heritage representation. Increased visibility of diaspora religious practices that are often overshadowed by stronger narratives of Lunar New Year. Provided a reliable, accessible resource for students, researchers, and Vietnamese communities worldwide. Contributed to the preservation of minority cultural knowledge by documenting practices that are rarely archived or formally recorded (this is especially important for myself as it helps to preserve my own culture to pass it down to the next generations.'
+  },
+  {
+    id: 6,
+    title: 'SASE Member Database',
+    description: 'A Sql project to help the Society of Asian Scientist and Engineers better understand our members',
+    image: cookbookpic,
+    tags: ['UX Research', 'MySql', 'Databases'],
+    category: 'web',
   },
 ];
 
