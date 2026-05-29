@@ -11,7 +11,6 @@ import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
 import greeklifehub from '..assets/greeklifehub.png';
 
-
 const projects = [
   {
     id: 1,
