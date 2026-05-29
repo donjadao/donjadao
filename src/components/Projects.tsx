@@ -60,7 +60,7 @@ const projects = [
   },
     {
     id: 5,
-    title: 'Vietnamese Catholic Lunar New Year',
+    title: 'Vietnamese Catholic Lunar New Year Wiki',
     description: 'A Wikipedia page covering the differences and importance of how Vietnamese Catholics celebrate Tét',
     image: cookbookpic,
     tags: ['Cultual Heritage Data', 'Wikipedia'],
