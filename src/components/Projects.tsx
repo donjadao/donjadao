@@ -42,11 +42,11 @@ const projects = [
   {
     id: 3,
     title: 'Greek Life Yelp',
-    description: 'Work in Progres. A centralized hub to learn about a universities Greek life communities.',
+    description: 'A wire frame for a centralized hub to learn about a universitys Greek life communities.',
     image: 'https://images.unsplash.com/photo-1597534458220-9fb4969f2df5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwd2lyZWZyYW1lfGVufDF8fHx8MTc2MDA3MTczMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    tags: ['Dashboard', 'UX Design', 'Web App', 'UX Research'],
+    tags: ['UX Design', 'Web App', 'Wireframe', 'Information Retrieval'],
     category: 'web',
-    link: '#',
+    link: 'https://lucid.app/lucidchart/655b9f29-7677-4e47-a0fa-56fc91591265/edit?viewport_loc=-4969%2C-2786%2C10230%2C4496%2C0_0&invitationId=inv_c8d5d512-38f9-4c4f-baa9-2f0bdc42b04f',
     //github: '#',
   },
   {
