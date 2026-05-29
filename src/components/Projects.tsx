@@ -9,7 +9,7 @@ import type { Project } from './ProjectDetail';
 import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
-import greeklifehub from '..assets/greeklifehub.png';
+import greeklifehub from '../assets/greeklifehub.png';
 
 const projects = [
   {
