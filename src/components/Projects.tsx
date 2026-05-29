@@ -9,7 +9,7 @@ import type { Project } from './ProjectDetail';
 import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
-import Greeklifehub from '..assets/Greeklifehub.png';
+import greeklifehub from '..assets/Greeklifehub.png';
 
 
 const projects = [
@@ -44,7 +44,7 @@ const projects = [
     id: 3,
     title: 'Greek Life Hub',
     description: 'A wire frame for a centralized hub to learn about a universitys Greek life communities.',
-    image: Greeklifehub,
+    image: greeklifehub,
     tags: ['UX Design', 'Web App', 'Wireframe', 'Information Retrieval'],
     category: 'web',
     link: 'https://lucid.app/lucidchart/655b9f29-7677-4e47-a0fa-56fc91591265/edit?viewport_loc=-4969%2C-2786%2C10230%2C4496%2C0_0&invitationId=inv_c8d5d512-38f9-4c4f-baa9-2f0bdc42b04f',
