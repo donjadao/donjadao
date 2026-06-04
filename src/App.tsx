@@ -24,7 +24,6 @@ export default function App() {
         <Projects onProjectClick={setSelectedProject} />
         <Gallery />
         <Leadership />
-        <Contact />
       </main>
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto text-center">
