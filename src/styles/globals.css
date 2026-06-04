@@ -39,9 +39,6 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #d03674;
-  --text-2xl: 3rem;      /* h1 size */
-  --text-xl: 2.25rem;    /* h2 size */
-  --font-weight-medium: 800; /* boldness */
 }
 
 }
