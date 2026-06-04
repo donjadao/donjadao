@@ -18,6 +18,10 @@ import markerpainting from '../assets/portfolio pics/markerpainting.jpeg';
 import saseshirt from '../assets/portfolio pics/saseshirt.png';
 import ux_portfolio_showcase from '../assets/portfolio pics/ux_portfolio_showcase.png';
 import meetux2023 from '../assets/portfolio pics/meetUX2023.jpg';
+import sasegrad from '../assets/portfolio pics/sasegrad.png';
+import saseclotheslineapp from '../assets/portfolio pics/saseclotheslineapp.png';
+import saseregcon from '../assets/portfolio pics/saseregcon.png';
+import sase5k from '../assets/portfolio pics/sase5k.png';
 
 
 const artworks = [
@@ -117,6 +121,34 @@ const artworks = [
     title: 'Meet the UX Exec',
     category: 'Graphic Design',
     image: meetux2023,
+    tall: false,
+  },
+    {
+    id: 12,
+    title: 'Meet the UX Exec',
+    category: 'Graphic Design',
+    image: sasegrad,
+    tall: false,
+  },
+    {
+    id: 12,
+    title: 'Meet the UX Exec',
+    category: 'Graphic Design',
+    image: saseclotheslineapp,
+    tall: false,
+  },
+    {
+    id: 12,
+    title: 'Meet the UX Exec',
+    category: 'Graphic Design',
+    image: saseregcon,
+    tall: false,
+  },
+    {
+    id: 12,
+    title: 'Meet the UX Exec',
+    category: 'Graphic Design',
+    image: sase5k,
     tall: false,
   },
 ];
