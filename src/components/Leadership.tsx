@@ -84,7 +84,7 @@ export function Leadership() {
     <section id="leadership" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white">Leadership & Involvement</h2>
+          <div className="title">Leadership & Involvement<div>
           <p className="max-w-2xl mx-auto text-white/70">
             Organizations and initiatives where I've contributed my time and skills to make a positive impact
             in the design community and beyond. My main goal in life is to help and better the lives of the people around me and community based innitiatives like this allow me to directly do that. These organization have helped be blossom into the social butterly I am today. 
