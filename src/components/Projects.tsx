@@ -92,7 +92,7 @@ export function Projects({ onProjectClick }: ProjectsProps) {
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="mb-4 text-white text-5xl font-black tracking-tight">Featured Projects</h2>
+          <div className="title text-white mb-4">Featured Projects</div>
           <p className="max-w-2xl mx-auto text-white/70">
             A collection of UI/UX design projects showcasing my approach to solving complex user problems 
             with clean, intuitive interfaces.
