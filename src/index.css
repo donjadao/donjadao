@@ -86,11 +86,11 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
+    --text-xl: 2rem;
+    --text-2xl: 3rem;
     --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
+    --font-weight-medium: 600;
+    --font-weight-semibold: 800;
     --radius-xs: .125rem;
     --animate-bounce: bounce 1s infinite;
     --blur-md: 12px;
