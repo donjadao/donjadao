@@ -123,33 +123,33 @@ const artworks = [
     image: meetux2023,
     tall: false,
   },
-    {
+  {
     id: 15,
-    title: 'Meet the UX Exec',
+    title: 'Sase Grad Stoles',
     category: 'Graphic Design',
     image: sasegrad,
-    tall: false,
+    tall: true,
   },
-    {
+  {
     id: 16,
-    title: 'Meet the UX Exec',
+    title: 'Sase Clothes Line Application',
     category: 'Graphic Design',
     image: saseclotheslineapp,
-    tall: false,
+    tall: true,
   },
-    {
+  {
     id: 17,
-    title: 'Meet the UX Exec',
+    title: 'Sase Regional Convention',
     category: 'Graphic Design',
     image: saseregcon,
-    tall: false,
+    tall: true,
   },
-    {
+  {
     id: 18,
-    title: 'Meet the UX Exec',
+    title: 'Sase 5k Flyer',
     category: 'Graphic Design',
     image: sase5k,
-    tall: false,
+    tall: true,
   },
 ];
 
