@@ -20,7 +20,7 @@ import ux_portfolio_showcase from '../assets/portfolio pics/ux_portfolio_showcas
 import meetux2023 from '../assets/portfolio pics/meetUX2023.jpg';
 import sasegrad from '../assets/portfolio pics/sasegrad.png';
 import saseclotheslineapp from '../assets/portfolio pics/saseclotheslineapp.png';
-import saseregcon from '../assets/portfolio pics/saseregcon.png';
+import saseregcon from '../assets/portfolio pics/saseregcon.jpg';
 import sase5k from '../assets/portfolio pics/sase5k.png';
 
 
