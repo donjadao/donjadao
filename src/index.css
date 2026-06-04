@@ -88,7 +88,7 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 2rem;
     --text-2xl: 3rem;
-    --text-5xl: 5rem;
+    --text-5xl: 6rem;
     --font-weight-normal: 400;
     --font-weight-medium: 600;
     --font-weight-semibold: 800;
@@ -145,16 +145,19 @@
   abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
+  }    
+
+  .title {
+  @apply text-5xl font-black tracking-tight;
   }
 
-  tit {
-    
 
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
   }
 
+    
   a {
     color: inherit;
     -webkit-text-decoration: inherit;
@@ -376,7 +379,7 @@
     background-color: var(--background);
     color: var(--foreground);
   }
-
+  
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h3 {
     font-size: var(--text-lg);
     font-weight: var(--font-weight-medium);
