@@ -10,6 +10,7 @@ import matchaThumb from '../assets/Matcha_Infographic.png';
 import bookstorePic from '../assets/bookstore_pic.png';
 import cookbookpic from '../assets/College Cookbook.png';
 import greeklifehub from '../assets/greeklifehub.png';
+import tetwiki from '../assets/tetwiki.png';
 
 const projects = [
   {
@@ -62,7 +63,7 @@ const projects = [
   id: 5,
   title: 'Vietnamese Catholic Lunar New Year Wiki',
   description: 'A Wikipedia page covering the differences and importance of how Vietnamese Catholics celebrate Tét',
-  image: cookbookpic,
+  image: tetwiki,
   tags: ['Cultual Heritage Data', 'Wikipedia'],
   category: 'web',
   link: 'https://en.wikipedia.org/wiki/Vietnamese_Catholic_Lunar_New_Year',
