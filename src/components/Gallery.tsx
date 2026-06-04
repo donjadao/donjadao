@@ -160,7 +160,7 @@ export function Gallery() {
     <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="title">>Art & Graphics<div>
+          <div className="title">Art & Graphics<div>
           <p className="max-w-2xl mx-auto text-white/70">
             A showcase of my creative work including digital art, illustrations, and graphic design pieces.
           </p>
