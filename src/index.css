@@ -2197,10 +2197,6 @@ html {
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Reset heading defaults (optional but recommended) */
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
@@ -2208,8 +2204,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: inherit;
 }
 
-/* Your custom class */
 .title {
-  @apply text-5xl font-black tracking-tight;
+  font-size: 5rem;     /* or whatever size you want */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
+
 
