@@ -147,11 +147,6 @@
     text-decoration: underline dotted;
   }    
 
-  .title {
-  @apply text-5xl font-black tracking-tight;
-  }
-
-
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
@@ -584,6 +579,10 @@
   .size-9 {
     width: calc(var(--spacing) * 9);
     height: calc(var(--spacing) * 9);
+  }
+  
+  .title {
+  @apply text-5xl font-black tracking-tight;
   }
 
   .h-4 {
